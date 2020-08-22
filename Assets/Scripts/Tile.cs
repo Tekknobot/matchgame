@@ -131,6 +131,8 @@ public class Tile : MonoBehaviour {
 					SumScore.Add(matchingTiles.Count);
 					BoardManager.instance.GetComponent<AudioSource>().volume = 0;
 					SFXManager.instance.PlaySFX(Clip.Clear6);
+					
+					StartCoroutine(ShadowWave());
 					Instantiate(whiteParticles, transform.position, Quaternion.identity);
 					StartCoroutine(HasNasSampleStoppedPlaying());
 				}						
@@ -138,11 +140,9 @@ public class Tile : MonoBehaviour {
 					SumScore.Add(matchingTiles.Count);
 					BoardManager.instance.GetComponent<AudioSource>().volume = 0;
 					SFXManager.instance.PlaySFX(Clip.Clear7);
-
-					StopCoroutine(BoardManager.instance.FindNullTiles());
-					StartCoroutine(BoardManager.instance.FindNullTiles());
 										
 					StartCoroutine(TriggerWave(matchingTiles.Count));
+					StartCoroutine(ShadowWave());
 					StartCoroutine(HasSoulSampleStoppedPlaying());
 				}					
 			}
@@ -182,9 +182,34 @@ public class Tile : MonoBehaviour {
 		StartCoroutine(BoardManager.instance.FindNullTiles());		
 	}
 
+	public IEnumerator ShadowWave() {
+		for (int x = 0; x < BoardManager.instance.xSize; x++) {
+			for (int y = 0; y < BoardManager.instance.ySize; y++) {
+				BoardManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
+				//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
+				yield return StartCoroutine(ShadowWaveDelay());
+			}
+		}
+		StartCoroutine(UnShadowWave());		
+	}	
+
+	public IEnumerator UnShadowWave() {
+		for (int x = 0; x < BoardManager.instance.xSize; x++) {
+			for (int y = 0; y < BoardManager.instance.ySize; y++) {
+				BoardManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = Color.white;
+				//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
+				yield return null;
+			}
+		}		
+	}		
+
 	IEnumerator WaveDelay() {
 		yield return new WaitForSeconds(0.5f);
 	}
+
+	IEnumerator ShadowWaveDelay() {
+		yield return new WaitForSeconds(0.01f);
+	}	
 
 	IEnumerator StopShakingCamera() {
 		yield return new WaitForSeconds(0.1f);
