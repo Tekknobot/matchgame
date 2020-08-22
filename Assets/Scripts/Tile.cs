@@ -58,7 +58,7 @@ public class Tile : MonoBehaviour {
 				GetComponent<RotateYaxis>().flipTile();
 				StartCoroutine(resetflipTile());
 
-				ClearAllMatches();
+				previousSelected.ClearAllMatches();
 				previousSelected.GetComponent<Tile>().Deselect();
 				ClearAllMatches();				
 			}
@@ -138,9 +138,12 @@ public class Tile : MonoBehaviour {
 					SumScore.Add(matchingTiles.Count);
 					BoardManager.instance.GetComponent<AudioSource>().volume = 0;
 					SFXManager.instance.PlaySFX(Clip.Clear7);
+
+					StopCoroutine(BoardManager.instance.FindNullTiles());
+					StartCoroutine(BoardManager.instance.FindNullTiles());
+										
 					StartCoroutine(TriggerWave(matchingTiles.Count));
 					StartCoroutine(HasSoulSampleStoppedPlaying());
-					
 				}					
 			}
 			matchFound = true; // 6
