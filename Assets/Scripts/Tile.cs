@@ -175,7 +175,7 @@ public class Tile : MonoBehaviour {
 					StartCoroutine(BoardManager.instance.FindNullTiles());
 					SFXManager.instance.PlaySFX(Clip.Scratch);
 					SumScore.Add(clearedCount);
-					yield return StartCoroutine(WaveDelay());
+					yield return StartCoroutine(HalfSecondDelay());
 				}
 			}
 		}
@@ -188,7 +188,7 @@ public class Tile : MonoBehaviour {
 			for (int y = 0; y < BoardManager.instance.ySize; y++) {
 				BoardManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
 				//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
-				yield return StartCoroutine(ShadowWaveDelayNas());
+				yield return StartCoroutine(HundrethDelay());
 			}
 		}
 		StartCoroutine(UnShadowWave());		
@@ -199,7 +199,7 @@ public class Tile : MonoBehaviour {
 			for (int y = 0; y < BoardManager.instance.ySize; y++) {
 				BoardManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
 				//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
-				yield return StartCoroutine(ShadowWaveDelay());
+				yield return StartCoroutine(TenthDelay());
 			}
 		}
 		StartCoroutine(UnShadowWave());		
@@ -210,7 +210,7 @@ public class Tile : MonoBehaviour {
 			for (int y = 0; y < BoardManager.instance.ySize; y++) {
 				BoardManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = Color.white;
 				//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
-				yield return null;
+				yield return StartCoroutine(HundrethDelay());
 			}
 		}		
 	}		
@@ -221,7 +221,7 @@ public class Tile : MonoBehaviour {
 				//BoardManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
 				//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
 				BoardManager.instance.tiles[x, y].GetComponent<RotateYaxis>().flipTile();
-				yield return StartCoroutine(FlipWaveDelay());
+				yield return StartCoroutine(TenthDelay());
 			}
 		}
 		StartCoroutine(UnFlipWave());		
@@ -233,24 +233,20 @@ public class Tile : MonoBehaviour {
 				//BoardManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = Color.white;
 				//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
 				BoardManager.instance.tiles[x, y].GetComponent<RotateYaxis>().resetflipTile();
-				yield return null;
+				yield return StartCoroutine(HundrethDelay());
 			}
-		}		
+		}	
 	}
 
-	IEnumerator WaveDelay() {
+	IEnumerator HalfSecondDelay() {
 		yield return new WaitForSeconds(0.5f);
 	}
 
-	IEnumerator ShadowWaveDelayNas() {
+	IEnumerator HundrethDelay() {
 		yield return new WaitForSeconds(0.01f);
 	}	
 
-	IEnumerator ShadowWaveDelay() {
-		yield return new WaitForSeconds(0.1f);
-	}	
-
-	IEnumerator FlipWaveDelay() {
+	IEnumerator TenthDelay() {
 		yield return new WaitForSeconds(0.1f);
 	}		
 
