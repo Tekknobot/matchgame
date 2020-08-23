@@ -143,9 +143,9 @@ public class Tile : MonoBehaviour {
 										
 					StartCoroutine(TriggerWave(matchingTiles.Count));
 					StartCoroutine(ShadowWave());
-					StartCoroutine(FlipWave());
+					StartCoroutine(FlipWaveY());
 					StartCoroutine(HasSoulSampleStoppedPlaying());
-				}					
+				}									
 			}
 			matchFound = true; // 6
 		}
@@ -187,7 +187,6 @@ public class Tile : MonoBehaviour {
 		for (int x = 0; x < BoardManager.instance.xSize; x++) {
 			for (int y = 0; y < BoardManager.instance.ySize; y++) {
 				BoardManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
-				//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
 				yield return StartCoroutine(HundrethDelay());
 			}
 		}
@@ -198,7 +197,6 @@ public class Tile : MonoBehaviour {
 		for (int x = 0; x < BoardManager.instance.xSize; x++) {
 			for (int y = 0; y < BoardManager.instance.ySize; y++) {
 				BoardManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
-				//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
 				yield return StartCoroutine(TenthDelay());
 			}
 		}
@@ -209,46 +207,41 @@ public class Tile : MonoBehaviour {
 		for (int x = 0; x < BoardManager.instance.xSize; x++) {
 			for (int y = 0; y < BoardManager.instance.ySize; y++) {
 				BoardManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = Color.white;
-				//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
 				yield return StartCoroutine(HundrethDelay());
 			}
 		}		
 	}		
 
-	public IEnumerator FlipWave() {
+	public IEnumerator FlipWaveY() {
 		for (int x = 0; x < BoardManager.instance.xSize; x++) {
 			for (int y = 0; y < BoardManager.instance.ySize; y++) {
-				//BoardManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
-				//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
 				BoardManager.instance.tiles[x, y].GetComponent<RotateYaxis>().flipTile();
 				yield return StartCoroutine(TenthDelay());
 			}
 		}
-		StartCoroutine(UnFlipWave());		
+		StartCoroutine(UnFlipWaveY());		
 	}
 
-	public IEnumerator UnFlipWave() {
+	public IEnumerator UnFlipWaveY() {
 		for (int x = 0; x < BoardManager.instance.xSize; x++) {
 			for (int y = 0; y < BoardManager.instance.ySize; y++) {
-				//BoardManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = Color.white;
-				//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
 				BoardManager.instance.tiles[x, y].GetComponent<RotateYaxis>().resetflipTile();
 				yield return StartCoroutine(HundrethDelay());
 			}
 		}	
-	}
+	}	
 
 	IEnumerator HalfSecondDelay() {
 		yield return new WaitForSeconds(0.5f);
-	}
-
-	IEnumerator HundrethDelay() {
-		yield return new WaitForSeconds(0.01f);
 	}	
 
 	IEnumerator TenthDelay() {
 		yield return new WaitForSeconds(0.1f);
 	}		
+
+	IEnumerator HundrethDelay() {
+		yield return new WaitForSeconds(0.01f);
+	}
 
 	IEnumerator StopShakingCamera() {
 		yield return new WaitForSeconds(0.1f);

@@ -123,7 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whiteParticles: {fileID: 165192, guid: 13d1230e68dc2464ebcf7cbc4746b129, type: 3}
-  whiteParticles2: {fileID: 165192, guid: 89239615e44efa84689835fe709c2699, type: 3}
 --- !u!114 &8549526346335560883
 MonoBehaviour:
   m_ObjectHideFlags: 0
