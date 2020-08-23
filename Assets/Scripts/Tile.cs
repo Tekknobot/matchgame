@@ -17,12 +17,20 @@ public class Tile : MonoBehaviour {
 
 	Camera mainCamera;
 
+	private AudioSource audioSource;
+	public AudioClip[] samples;
+	private AudioClip sampleClips;	
+
 	void Awake() {
 		render = GetComponent<SpriteRenderer>();
 		mainCamera = Camera.main;
 		Deselect();
 		//SumScore.ClearHighScore();
     }
+
+	void Start() {
+		audioSource = gameObject.GetComponent<AudioSource>();
+    }	
 
 	void Update() {
 		CheckHighScore();
@@ -139,7 +147,11 @@ public class Tile : MonoBehaviour {
 				if (matchingTiles.Count >= 6) {
 					SumScore.Add(matchingTiles.Count);
 					BoardManager.instance.GetComponent<AudioSource>().volume = 0;
-					SFXManager.instance.PlaySFX(Clip.Clear7);
+
+					int index = Random.Range(0, samples.Length);
+					sampleClips = samples[index];
+					audioSource.clip = sampleClips;
+					audioSource.Play();
 										
 					StartCoroutine(TriggerWave(matchingTiles.Count));
 					StartCoroutine(ShadowWave());
@@ -260,7 +272,7 @@ public class Tile : MonoBehaviour {
 	}
 
 	IEnumerator HasSoulSampleStoppedPlaying() {
-		yield return new WaitForSeconds(19.412f);
+		yield return new WaitForSeconds(15f);
 		BoardManager.instance.GetComponent<AudioSource>().volume = 1;
 		StartCoroutine(BoardManager.instance.FindNullTiles());		
 	}	
