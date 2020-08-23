@@ -25,5 +25,6 @@ public class RotateYaxis : MonoBehaviour
     public void resetflipTile()
     {
         flipTrue = false;
+        transform.rotation = Quaternion.identity;
     }          
 }
