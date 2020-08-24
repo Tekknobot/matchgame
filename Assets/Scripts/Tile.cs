@@ -272,7 +272,7 @@ public class Tile : MonoBehaviour {
 	}
 
 	IEnumerator HasSoulSampleStoppedPlaying() {
-		yield return new WaitForSeconds(15f);
+		yield return new WaitWhile(()=> audioSource.isPlaying);
 		BoardManager.instance.GetComponent<AudioSource>().volume = 1;
 		StartCoroutine(BoardManager.instance.FindNullTiles());		
 	}	
