@@ -81,7 +81,7 @@ public class OperatorTile : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		if (render.tag == "blocks" && render.color == selectedColor) {
+		if (render.tag == "blocks" && render.color == Color.white) {
 			render.sprite = block;
 		}
 
@@ -129,12 +129,35 @@ public class OperatorTile : MonoBehaviour {
 		{
 		for (int y = 0; y < OperatorManager.instance.ySize; y++) {
 			for (int x = 0; x < OperatorManager.instance.xSize; x++) {
-				if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite == render.sprite) {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
-					//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
+
+					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "blue 0") {
+						SFXManager.instance.PlaySFX(Clip.Select);
+					}
+					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "green  0") {
+						SFXManager.instance.PlaySFX(Clip.Swap);
+					}	
+					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "orange 0") {
+						SFXManager.instance.PlaySFX(Clip.HatC);
+					}
+					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "pink 0") {
+						SFXManager.instance.PlaySFX(Clip.HatO);
+					}
+					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "purple 0") {
+						SFXManager.instance.PlaySFX(Clip.Clap);
+					}	
+					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "red 0") {
+						SFXManager.instance.PlaySFX(Clip.Crash);
+					}
+					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "turquoise  0") {
+						SFXManager.instance.PlaySFX(Clip.Ride);
+					}	
+					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "yellow  0") {
+						SFXManager.instance.PlaySFX(Clip.Rim);
+					}
+
 					yield return StartCoroutine(Delay());
 					StartCoroutine(UnTriggerWave());
-				}
 			}
 		}
 		yield return new WaitForSeconds(0f);
@@ -144,17 +167,15 @@ public class OperatorTile : MonoBehaviour {
 	public IEnumerator UnTriggerWave() {
 		for (int y = 0; y < OperatorManager.instance.ySize; y++) {
 			for (int x = 0; x < OperatorManager.instance.xSize; x++) {
-				if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite == render.sprite) {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = Color.white;
 					//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
 					yield return StartCoroutine(Delay());
-				}
 			}
 		}		
 	}		
 
 	IEnumerator Delay() {
-		yield return new WaitForSeconds(0.1f);
+		yield return new WaitForSeconds(0.125f);
 	}
 
 	IEnumerator StopShakingCamera() {
