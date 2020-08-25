@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public enum Clip { Music, Select, Swap, Clear4, Clear5, Clear6, Clear7, Scratch};
+public enum Clip { Music, Select, Swap, Clear4, Clear5, Clear6, Clear7, Scratch,
+					HatC, HatO, Clap, Crash, Rim, Ride, Swap2};
 
 public class SFXManager : MonoBehaviour {
 	public static SFXManager instance;
