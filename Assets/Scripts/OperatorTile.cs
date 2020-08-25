@@ -105,7 +105,7 @@ public class OperatorTile : MonoBehaviour {
 					GetComponent<RotateYaxis>().flipTile();
 					StartCoroutine(resetflipTile());
 					Instantiate(whiteParticles, transform.position, Quaternion.identity);
-					Select();
+					//Select();
 				}							
 			}
 		}
@@ -120,7 +120,8 @@ public class OperatorTile : MonoBehaviour {
 			Sprite tempSprite = render2.sprite;
 			render.sprite = tempSprite;
 			//SFXManager.instance.PlaySFX(Clip.Swap2);
-			previousSelected.GetComponent<OperatorTile>().Deselect(); 
+			previousSelected.GetComponent<OperatorTile>().Deselect();
+			Select(); 
 		}	
 	}	
 
