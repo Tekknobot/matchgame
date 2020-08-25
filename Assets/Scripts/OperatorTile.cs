@@ -31,6 +31,7 @@ public class OperatorTile : MonoBehaviour {
 
 	void Start() {
 		audioSource = gameObject.GetComponent<AudioSource>();
+		StartCoroutine(TriggerWave());
     }	
 
 	void Update() {
@@ -67,7 +68,6 @@ public class OperatorTile : MonoBehaviour {
 		if (render.sprite.name == "yellow  0") {
 			SFXManager.instance.PlaySFX(Clip.Rim);
 		}										
-
 
 		//SFXManager.instance.PlaySFX(Clip.Select);
 		mainCamera.GetComponent<CameraShake>().shakecamera();
@@ -122,7 +122,40 @@ public class OperatorTile : MonoBehaviour {
 			//SFXManager.instance.PlaySFX(Clip.Swap2);
 			previousSelected.GetComponent<OperatorTile>().Deselect(); 
 		}	
+	}	
+
+	public IEnumerator TriggerWave() {
+		while (true)
+		{
+		for (int y = 0; y < OperatorManager.instance.ySize; y++) {
+			for (int x = 0; x < OperatorManager.instance.xSize; x++) {
+				if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite == render.sprite) {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
+					//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
+					yield return StartCoroutine(Delay());
+					StartCoroutine(UnTriggerWave());
+				}
+			}
+		}
+		yield return new WaitForSeconds(0f);
+		}		
 	}		
+
+	public IEnumerator UnTriggerWave() {
+		for (int y = 0; y < OperatorManager.instance.ySize; y++) {
+			for (int x = 0; x < OperatorManager.instance.xSize; x++) {
+				if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite == render.sprite) {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = Color.white;
+					//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
+					yield return StartCoroutine(Delay());
+				}
+			}
+		}		
+	}		
+
+	IEnumerator Delay() {
+		yield return new WaitForSeconds(0.1f);
+	}
 
 	IEnumerator StopShakingCamera() {
 		yield return new WaitForSeconds(0.1f);
