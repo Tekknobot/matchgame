@@ -21,7 +21,16 @@ public class OperatorTile : MonoBehaviour {
 
 	public Sprite block;
 
-	//public List<GameObject> padManagers = new List<GameObject>();
+	Dictionary<string, Clip> spriteClip = new Dictionary<string, Clip>() {
+		{ "blue 0", Clip.Select },
+		{ "green  0", Clip.Swap },
+		{ "orange 0", Clip.HatC },
+		{ "pink 0", Clip.HatO },
+		{ "purple 0", Clip.Clap },
+		{ "red 0", Clip.Crash },
+		{ "turquoise  0", Clip.Ride },
+		{ "yellow  0", Clip.Rim },		
+	};
 
 	void Awake() {
 		render = GetComponent<SpriteRenderer>();
@@ -41,35 +50,12 @@ public class OperatorTile : MonoBehaviour {
 	private void Select() {
 		isSelected = true;
 		render.color = selectedColor;
-		previousSelected = GetComponent<OperatorTile>();
+		previousSelected = GetComponent<OperatorTile>();	
 
-		Debug.Log(render.sprite.name);
-		if (render.sprite.name == "blue 0") {
-			SFXManager.instance.PlaySFX(Clip.Select);
+		if (spriteClip.ContainsKey(render.sprite.name)) {
+			SFXManager.instance.PlaySFX(spriteClip[render.sprite.name]);
 		}
-		if (render.sprite.name == "green  0") {
-			SFXManager.instance.PlaySFX(Clip.Swap);
-		}	
-		if (render.sprite.name == "orange 0") {
-			SFXManager.instance.PlaySFX(Clip.HatC);
-		}
-		if (render.sprite.name == "pink 0") {
-			SFXManager.instance.PlaySFX(Clip.HatO);
-		}
-		if (render.sprite.name == "purple 0") {
-			SFXManager.instance.PlaySFX(Clip.Clap);
-		}	
-		if (render.sprite.name == "red 0") {
-			SFXManager.instance.PlaySFX(Clip.Crash);
-		}
-		if (render.sprite.name == "turquoise  0") {
-			SFXManager.instance.PlaySFX(Clip.Ride);
-		}	
-		if (render.sprite.name == "yellow  0") {
-			SFXManager.instance.PlaySFX(Clip.Rim);
-		}										
 
-		//SFXManager.instance.PlaySFX(Clip.Select);
 		mainCamera.GetComponent<CameraShake>().shakecamera();
 		StartCoroutine(StopShakingCamera());
 	}
@@ -131,31 +117,10 @@ public class OperatorTile : MonoBehaviour {
 			for (int x = 0; x < OperatorManager.instance.xSize; x++) {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
 
-					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "blue 0") {
-						SFXManager.instance.PlaySFX(Clip.Select);
+					if (spriteClip.ContainsKey(OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name)) {
+						SFXManager.instance.PlaySFX(spriteClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]);
 					}
-					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "green  0") {
-						SFXManager.instance.PlaySFX(Clip.Swap);
-					}	
-					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "orange 0") {
-						SFXManager.instance.PlaySFX(Clip.HatC);
-					}
-					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "pink 0") {
-						SFXManager.instance.PlaySFX(Clip.HatO);
-					}
-					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "purple 0") {
-						SFXManager.instance.PlaySFX(Clip.Clap);
-					}	
-					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "red 0") {
-						SFXManager.instance.PlaySFX(Clip.Crash);
-					}
-					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "turquoise  0") {
-						SFXManager.instance.PlaySFX(Clip.Ride);
-					}	
-					if (OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name == "yellow  0") {
-						SFXManager.instance.PlaySFX(Clip.Rim);
-					}
-
+					
 					yield return StartCoroutine(Delay());
 					StartCoroutine(UnTriggerWave());
 			}
@@ -168,7 +133,6 @@ public class OperatorTile : MonoBehaviour {
 		for (int y = 0; y < OperatorManager.instance.ySize; y++) {
 			for (int x = 0; x < OperatorManager.instance.xSize; x++) {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = Color.white;
-					//Instantiate(whiteParticles, BoardManager.instance.tiles[x, y].transform.position, Quaternion.identity);
 					yield return StartCoroutine(Delay());
 			}
 		}		
