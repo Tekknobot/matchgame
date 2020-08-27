@@ -105,7 +105,6 @@ public class OperatorTile : MonoBehaviour {
 					GetComponent<RotateYaxis>().flipTile();
 					StartCoroutine(resetflipTile());
 					Instantiate(whiteParticles, transform.position, Quaternion.identity);
-					//Select();
 				}							
 			}
 		}
