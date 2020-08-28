@@ -118,7 +118,7 @@ public class OperatorTile : MonoBehaviour {
 			for (int x = 0; x < OperatorManager.instance.xSize; x++) {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
 
-					if (spriteClip.ContainsKey(OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name)) {
+					if (spriteClip.ContainsKey(OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name) && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						//SFXManager.instance.PlaySFX(spriteClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]);
 						sampleClip = samples[spriteClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]];
 						audioSourceOnTile.clip = sampleClip;

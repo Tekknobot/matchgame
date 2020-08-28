@@ -4,9 +4,11 @@ using System.Collections.Generic;
 
 public class OperatorManager : MonoBehaviour {
 	public static OperatorManager instance;
-	public List<Sprite> block = new List<Sprite>();
+	public Sprite block;
 	public GameObject tile;
 	public int xSize, ySize;
+
+	int i = 1;
 
 	public GameObject[,] tiles;
 
@@ -32,11 +34,11 @@ public class OperatorManager : MonoBehaviour {
 
 				newTile.transform.parent = transform; 
 
-				Sprite newSprite = block[0];
+				Sprite newSprite = block;
 				newTile.GetComponent<SpriteRenderer>().sprite = newSprite; 
-
 				newTile.tag = "blocks";
-            }
+				newTile.name = "Pad " + i++.ToString();
+			}	
         }
 	}
 }
