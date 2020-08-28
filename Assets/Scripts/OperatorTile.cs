@@ -13,23 +13,23 @@ public class OperatorTile : MonoBehaviour {
 
 	private bool isSelected = false;
 
-	Camera mainCamera;
-
-	private AudioSource audioSource;
-	public AudioClip[] samples;
-	private AudioClip sampleClips;	
+	Camera mainCamera;	
 
 	public Sprite block;
 
-	Dictionary<string, Clip> spriteClip = new Dictionary<string, Clip>() {
-		{ "blue 0", Clip.Select },
-		{ "green  0", Clip.Swap },
-		{ "orange 0", Clip.HatC },
-		{ "pink 0", Clip.HatO },
-		{ "purple 0", Clip.Clap },
-		{ "red 0", Clip.Crash },
-		{ "turquoise  0", Clip.Ride },
-		{ "yellow  0", Clip.Rim },		
+	private AudioSource audioSource;
+	public AudioClip[] samples;
+	private AudioClip sampleClip;	
+
+	Dictionary<string, int> spriteClip = new Dictionary<string, int>() {
+		{ "blue 0", 0 },
+		{ "green  0", 1 },
+		{ "orange 0", 2 },
+		{ "pink 0", 3 },
+		{ "purple 0", 4 },
+		{ "red 0", 5 },
+		{ "turquoise  0", 6 },
+		{ "yellow  0", 7 },		
 	};
 
 	void Awake() {
@@ -39,13 +39,9 @@ public class OperatorTile : MonoBehaviour {
     }
 
 	void Start() {
-		audioSource = gameObject.GetComponent<AudioSource>();
+		audioSource = SEQAudioManager.instance.GetComponent<AudioSource>();
 		StartCoroutine(TriggerWave());
-    }	
-
-	void Update() {
-		
-	}
+    }
 
 	private void Select() {
 		isSelected = true;
@@ -53,7 +49,10 @@ public class OperatorTile : MonoBehaviour {
 		previousSelected = GetComponent<OperatorTile>();	
 
 		if (spriteClip.ContainsKey(render.sprite.name)) {
-			SFXManager.instance.PlaySFX(spriteClip[render.sprite.name]);
+			//SFXManager.instance.PlaySFX(spriteClip[render.sprite.name]);
+			sampleClip = samples[spriteClip[render.sprite.name]];
+			audioSource.clip = sampleClip;
+			audioSource.Play();			
 		}
 
 		mainCamera.GetComponent<CameraShake>().shakecamera();
@@ -104,7 +103,6 @@ public class OperatorTile : MonoBehaviour {
 		if (render.sprite.name == "block 0") {
 			Sprite tempSprite = render2.sprite;
 			render.sprite = tempSprite;
-			//SFXManager.instance.PlaySFX(Clip.Swap2);
 			previousSelected.GetComponent<OperatorTile>().Deselect();
 			Select(); 
 		}	
@@ -118,7 +116,10 @@ public class OperatorTile : MonoBehaviour {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
 
 					if (spriteClip.ContainsKey(OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name)) {
-						SFXManager.instance.PlaySFX(spriteClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]);
+						//SFXManager.instance.PlaySFX(spriteClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]);
+						sampleClip = samples[spriteClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]];
+						audioSource.clip = sampleClip;
+						audioSource.Play();						
 					}
 					
 					yield return StartCoroutine(Delay());
@@ -139,7 +140,7 @@ public class OperatorTile : MonoBehaviour {
 	}		
 
 	IEnumerator Delay() {
-		yield return new WaitForSeconds(0.125f);
+		yield return new WaitForSeconds(0.120975f);
 	}
 
 	IEnumerator StopShakingCamera() {

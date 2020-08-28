@@ -19,7 +19,7 @@ public class Tile : MonoBehaviour {
 
 	private AudioSource audioSource;
 	public AudioClip[] samples;
-	private AudioClip sampleClips;	
+	private AudioClip sampleClip;	
 
 	void Awake() {
 		render = GetComponent<SpriteRenderer>();
@@ -149,8 +149,8 @@ public class Tile : MonoBehaviour {
 					BoardManager.instance.GetComponent<AudioSource>().volume = 0;
 
 					int index = Random.Range(0, samples.Length);
-					sampleClips = samples[index];
-					audioSource.clip = sampleClips;
+					sampleClip = samples[index];
+					audioSource.clip = sampleClip;
 					audioSource.Play();
 										
 					StartCoroutine(TriggerWave(matchingTiles.Count));

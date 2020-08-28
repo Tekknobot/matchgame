@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3785095208035288640}
   - component: {fileID: 5339543614467046591}
   - component: {fileID: 8549526346335560883}
-  - component: {fileID: 7412841997231843765}
   - component: {fileID: 8165501681871313916}
   m_Layer: 0
   m_Name: operator tile
@@ -125,102 +124,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipTrue: 0
   smooth: 1
---- !u!82 &7412841997231843765
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3785095208035288645}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &8165501681871313916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,5 +137,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whiteParticles: {fileID: 165192, guid: 13d1230e68dc2464ebcf7cbc4746b129, type: 3}
-  samples: []
   block: {fileID: 21300000, guid: 84ab6e21bcd1fb44fb85f157f8c9610f, type: 3}
+  samples:
+  - {fileID: 8300000, guid: 3123a94e4eb359043828ac928a6a071c, type: 3}
+  - {fileID: 8300000, guid: d6d2262ff90041149a1925a432e7047c, type: 3}
+  - {fileID: 8300000, guid: d99d4c3c37d1a294089c3d8f79cdbc51, type: 3}
+  - {fileID: 8300000, guid: 60807c6115135df419f3a9da72614eff, type: 3}
+  - {fileID: 8300000, guid: e01a0678479c3064d98094070576f4fc, type: 3}
+  - {fileID: 8300000, guid: 1d62f97502b57ed41ab6065c235ecfd5, type: 3}
+  - {fileID: 8300000, guid: 73fd65680615a0b42858e248814eb6d0, type: 3}
+  - {fileID: 8300000, guid: 1a537bc071d1fc44cb9b5acbbe3e34ec, type: 3}
