@@ -19,7 +19,9 @@ public class OperatorTile : MonoBehaviour {
 
 	private AudioSource audioSource;
 	public AudioClip[] samples;
-	private AudioClip sampleClip;	
+	private AudioClip sampleClip;
+
+	private AudioSource audioSourceOnTile;	
 
 	Dictionary<string, int> spriteClip = new Dictionary<string, int>() {
 		{ "blue 0", 0 },
@@ -40,6 +42,7 @@ public class OperatorTile : MonoBehaviour {
 
 	void Start() {
 		audioSource = SEQAudioManager.instance.GetComponent<AudioSource>();
+		audioSourceOnTile = gameObject.GetComponent<AudioSource>();
 		StartCoroutine(TriggerWave());
     }
 
@@ -118,8 +121,8 @@ public class OperatorTile : MonoBehaviour {
 					if (spriteClip.ContainsKey(OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name)) {
 						//SFXManager.instance.PlaySFX(spriteClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]);
 						sampleClip = samples[spriteClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]];
-						audioSource.clip = sampleClip;
-						audioSource.Play();						
+						audioSourceOnTile.clip = sampleClip;
+						audioSourceOnTile.Play();						
 					}
 					
 					yield return StartCoroutine(Delay());
