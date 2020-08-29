@@ -32,6 +32,23 @@ public class OperatorTile : MonoBehaviour {
 		{ "red 0", 5 },
 		{ "turquoise  0", 6 },
 		{ "yellow  0", 7 },		
+
+		{ "sample 0", 8 },
+		{ "sample 1", 9 },
+		{ "sample 2", 10 },
+		{ "sample 3", 11 },
+		{ "sample 4", 12 },
+		{ "sample 5", 13 },
+		{ "sample 6", 14 },
+		{ "sample 7", 15 },	
+		{ "sample 8", 16 },
+		{ "sample 9", 17 },
+		{ "sample 10", 18 },
+		{ "sample 11", 19 },
+		{ "sample 12", 20 },
+		{ "sample 13", 21 },
+		{ "sample 14", 22 },
+		{ "sample 15", 23 },					
 	};
 
 	void Awake() {
@@ -143,7 +160,7 @@ public class OperatorTile : MonoBehaviour {
 	}		
 
 	IEnumerator Delay() {
-		yield return new WaitForSeconds(0.120975f);
+		yield return new WaitForSeconds(0.178575f);
 	}
 
 	IEnumerator StopShakingCamera() {
