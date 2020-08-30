@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class OperatorTile : MonoBehaviour {
 	private static Color selectedColor = new Color(.5f, .5f, .5f, 1.0f);
@@ -21,7 +22,10 @@ public class OperatorTile : MonoBehaviour {
 	public AudioClip[] samples;
 	private AudioClip sampleClip;
 
-	private AudioSource audioSourceOnTile;	
+	private AudioSource audioSourceOnTile;
+	
+	public float bpm;
+	public float ms;
 
 	Dictionary<string, int> spriteClip = new Dictionary<string, int>() {
 		{ "blue 0", 0 },
@@ -60,8 +64,17 @@ public class OperatorTile : MonoBehaviour {
 	void Start() {
 		audioSource = SEQAudioManager.instance.GetComponent<AudioSource>();
 		audioSourceOnTile = gameObject.GetComponent<AudioSource>();
+
+		bpm = GameObject.Find ("Slider").GetComponent<Slider>().value;
+
 		StartCoroutine(TriggerWave());
+		
     }
+
+	void Update() {
+		bpm = GameObject.Find ("Slider").GetComponent<Slider>().value;	
+		GameObject.Find ("BPM").GetComponent<Text>().text = bpm.ToString();
+	}
 
 	private void Select() {
 		isSelected = true;
@@ -69,7 +82,6 @@ public class OperatorTile : MonoBehaviour {
 		previousSelected = GetComponent<OperatorTile>();	
 
 		if (spriteClip.ContainsKey(render.sprite.name)) {
-			//SFXManager.instance.PlaySFX(spriteClip[render.sprite.name]);
 			sampleClip = samples[spriteClip[render.sprite.name]];
 			audioSource.clip = sampleClip;
 			audioSource.Play();			
@@ -136,7 +148,6 @@ public class OperatorTile : MonoBehaviour {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
 
 					if (spriteClip.ContainsKey(OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name) && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-						//SFXManager.instance.PlaySFX(spriteClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]);
 						sampleClip = samples[spriteClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]];
 						audioSourceOnTile.clip = sampleClip;
 						audioSourceOnTile.Play();						
@@ -159,8 +170,14 @@ public class OperatorTile : MonoBehaviour {
 		}		
 	}		
 
-	IEnumerator Delay() {
-		yield return new WaitForSeconds(0.178575f);
+    public void SetBPM(float bpmValue)
+    {
+        bpm = bpmValue;
+    }	
+
+	public IEnumerator Delay() {
+		ms = 60000 / bpm / 1000 / 4;
+		yield return new WaitForSeconds(ms);
 	}
 
 	IEnumerator StopShakingCamera() {

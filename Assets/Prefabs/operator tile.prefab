@@ -164,6 +164,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a74a4180e4747974aaf940c312b5ee55, type: 3}
   - {fileID: 8300000, guid: e918ff4f1d47de74bb68d32fbb6a533e, type: 3}
   - {fileID: 8300000, guid: 8ee7bebbee5a423499ec0a162316108e, type: 3}
+  bpm: 60
+  ms: 0
+  sliderValue: {fileID: 8372647140088327567, guid: 04e87e92a6438414497fe9b43d4cbb2d,
+    type: 3}
+  slider: {fileID: 4458058803506516848, guid: f4b486ca2236ae24b9b706fca9811b40, type: 3}
 --- !u!82 &-3731806925748220179
 AudioSource:
   m_ObjectHideFlags: 0
