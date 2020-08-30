@@ -27,7 +27,7 @@ public class OperatorTile : MonoBehaviour {
 	public float bpm;
 	public float ms;
 
-	public int numBeatsPerSegment = 16;
+	public int numBeatsPerSegment = 4;
 	private static double time;
 	private double nextEventTime;
 
