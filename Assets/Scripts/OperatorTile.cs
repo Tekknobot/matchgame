@@ -27,6 +27,10 @@ public class OperatorTile : MonoBehaviour {
 	public float bpm;
 	public float ms;
 
+	public int numBeatsPerSegment = 16;
+	private static double time;
+	private double nextEventTime;
+
 	Dictionary<string, int> spriteClip = new Dictionary<string, int>() {
 		{ "blue 0", 0 },
 		{ "green  0", 1 },
@@ -67,6 +71,8 @@ public class OperatorTile : MonoBehaviour {
 
 		bpm = GameObject.Find ("Slider").GetComponent<Slider>().value;
 
+		nextEventTime = AudioSettings.dspTime + 2.0f;
+
 		StartCoroutine(TriggerWave());
 		
     }
@@ -74,6 +80,8 @@ public class OperatorTile : MonoBehaviour {
 	void Update() {
 		bpm = GameObject.Find ("Slider").GetComponent<Slider>().value;	
 		GameObject.Find ("BPM").GetComponent<Text>().text = bpm.ToString();
+
+		time = AudioSettings.dspTime;
 	}
 
 	private void Select() {
@@ -150,7 +158,10 @@ public class OperatorTile : MonoBehaviour {
 					if (spriteClip.ContainsKey(OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name) && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = samples[spriteClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]];
 						audioSourceOnTile.clip = sampleClip;
-						audioSourceOnTile.Play();						
+						if (time + 1.0f > nextEventTime) {
+							audioSourceOnTile.PlayScheduled(nextEventTime);	
+							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
+						}					
 					}
 					
 					yield return StartCoroutine(Delay());
