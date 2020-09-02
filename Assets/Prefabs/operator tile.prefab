@@ -166,7 +166,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8ee7bebbee5a423499ec0a162316108e, type: 3}
   bpm: 0
   ms: 0
-  numBeatsPerSegment: 16
+  numBeatsPerSegment: 1
 --- !u!82 &-3731806925748220179
 AudioSource:
   m_ObjectHideFlags: 0
