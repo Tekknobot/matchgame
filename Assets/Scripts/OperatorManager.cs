@@ -11,6 +11,7 @@ public class OperatorManager : MonoBehaviour {
 	int i = 1;
 
 	public GameObject[,] tiles;
+	public GameObject[][,] boards = new GameObject[8][,];
 
 	public bool IsShifting { get; set; }
 
@@ -40,5 +41,9 @@ public class OperatorManager : MonoBehaviour {
 				newTile.name = "Pad " + i++.ToString();
 			}	
         }
+
+		for (int x = 0; x < boards.Length; x++) { 
+			boards[x] = tiles;
+		}
 	}
 }
