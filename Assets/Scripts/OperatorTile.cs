@@ -230,7 +230,7 @@ public class OperatorTile : MonoBehaviour {
 				else if (OperatorManager.instance.boards[index][x, y] == false && render.sprite.name == "yellow  0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
 				}
-
+				
 			}
 		}
 	}

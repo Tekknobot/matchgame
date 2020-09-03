@@ -44,6 +44,6 @@ public class OperatorManager : MonoBehaviour {
 
 		for (int x = 0; x < boards.Length; x++) { 
 			boards[x] = new bool[xSize,ySize];
-		}
+		}		
 	}
 }
