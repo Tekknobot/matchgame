@@ -96,11 +96,16 @@ public class OperatorTile : MonoBehaviour {
 	}	
 
 	private void Select() {
+		if (render.sprite.name != "block 0") {
+			DisplayActiveBoard(spriteClip[render.sprite.name]);
+		}	
+		else {
+			return;
+		}
+
 		isSelected = true;
 		render.color = selectedColor;
 		previousSelected = GetComponent<OperatorTile>();	
-
-		DisplayActiveBoard(spriteClip[render.sprite.name]);
 
 		if (spriteClip.ContainsKey(render.sprite.name)) {
 			sampleClip = samples[spriteClip[render.sprite.name]];
@@ -128,7 +133,7 @@ public class OperatorTile : MonoBehaviour {
 				StartCoroutine(resetflipTile());
 				Instantiate(whiteParticles, transform.position, Quaternion.identity);
 			}			
-		}
+		}	
 
 		if (render.sprite == null) {
 		 	return;
