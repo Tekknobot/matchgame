@@ -139,6 +139,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteParticles: {fileID: 165192, guid: 13d1230e68dc2464ebcf7cbc4746b129, type: 3}
   block: {fileID: 21300000, guid: 84ab6e21bcd1fb44fb85f157f8c9610f, type: 3}
+  blue: {fileID: 21300000, guid: 05b4c4f961814a142bdc050bbc7e309d, type: 3}
+  green: {fileID: 21300000, guid: 24d443ec2535bcb4e9a12070a9bba7fb, type: 3}
+  orange: {fileID: 21300000, guid: 79ebc7a3902f0484393fde95d9122729, type: 3}
+  pink: {fileID: 21300000, guid: 0cab3377a64efd94fbc1c198716625a6, type: 3}
+  purple: {fileID: 21300000, guid: 1db843d66c6776c4bba3a8188b45353b, type: 3}
+  red: {fileID: 21300000, guid: 8894fa8f4561292488d7e1bc4f97fc74, type: 3}
+  turquoise: {fileID: 21300000, guid: ed2dba5f653561c4eb18222e13b8a15b, type: 3}
+  yellow: {fileID: 21300000, guid: 6865b0718d49b64459cc10b1e958c0f4, type: 3}
   samples:
   - {fileID: 8300000, guid: 3123a94e4eb359043828ac928a6a071c, type: 3}
   - {fileID: 8300000, guid: d6d2262ff90041149a1925a432e7047c, type: 3}
