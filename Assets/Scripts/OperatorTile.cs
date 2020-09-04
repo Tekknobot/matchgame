@@ -14,7 +14,9 @@ public class OperatorTile : MonoBehaviour {
 
 	private bool isSelected = false;
 
-	Camera mainCamera;	
+	Camera mainCamera;
+
+	public GameObject clickedPad;
 
 	public Sprite block;
 	public Sprite blue;
@@ -34,6 +36,15 @@ public class OperatorTile : MonoBehaviour {
 	private AudioClip sampleClip;
 
 	private AudioSource audioSourceOnTile;
+
+	public AudioSource audioSource0;	
+	public AudioSource audioSource1;
+	public AudioSource audioSource2;	
+	public AudioSource audioSource3;
+	public AudioSource audioSource4;
+	public AudioSource audioSource5;
+	public AudioSource audioSource6;
+	public AudioSource audioSource7;
 	
 	public float bpm;
 	public float ms;
@@ -92,7 +103,7 @@ public class OperatorTile : MonoBehaviour {
 		bpm = GameObject.Find ("Slider").GetComponent<Slider>().value;	
 		GameObject.Find ("BPM").GetComponent<Text>().text = bpm.ToString();
 
-		time = AudioSettings.dspTime;
+		time = AudioSettings.dspTime;		
 	}	
 
 	private void Select() {
@@ -124,6 +135,12 @@ public class OperatorTile : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
+        RaycastHit hitInfo = new RaycastHit();
+        if (Physics.Raycast (Camera.main.ScreenPointToRay (Input.mousePosition), out hitInfo)) {
+            //Debug.Log (hitInfo.collider.gameObject.name);
+			clickedPad = GameObject.Find(hitInfo.collider.gameObject.name);
+        } 
+
 		if (render.tag == "blocks" && render.color == Color.white && isSelected == true) {	
 			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
 				OperatorManager.instance.boards[spriteClip[previousSelected.render.sprite.name]][jFound, kFound] = false;
@@ -245,14 +262,70 @@ public class OperatorTile : MonoBehaviour {
 			return;
 		}
 
-		if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {	
-			if (render.sprite.name == "block 0") {
+		if (render.sprite.name == "block 0" && render2.sprite.name == "blue 0") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {	
 				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
-				OperatorManager.instance.boards[spriteClip[render2.sprite.name]][jFound,kFound] = true;
+				OperatorManager.instance.boards[0][jFound,kFound] = true;
 				previousSelected.GetComponent<OperatorTile>().Deselect();
 				Select(); 
-			}														
-		}
+			}
+		}		
+		if (render.sprite.name == "block 0" && render2.sprite.name == "green  0") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {	
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.boards[1][jFound,kFound] = true;
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select(); 
+			}
+		}		
+		if (render.sprite.name == "block 0" && render2.sprite.name == "orange 0") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {	
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.boards[2][jFound,kFound] = true;
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select(); 
+			}
+		}	
+		if (render.sprite.name == "block 0" && render2.sprite.name == "pink 0") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {	
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.boards[3][jFound,kFound] = true;
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select(); 
+			}
+		}		
+		if (render.sprite.name == "block 0" && render2.sprite.name == "purple 0") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {	
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.boards[4][jFound,kFound] = true;
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select(); 
+			}
+		}		
+		if (render.sprite.name == "block 0" && render2.sprite.name == "red 0") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {	
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.boards[5][jFound,kFound] = true;
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select(); 
+			}
+		}		
+		if (render.sprite.name == "block 0" && render2.sprite.name == "turquoise  0") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {	
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.boards[6][jFound,kFound] = true;
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select(); 
+			}
+		}		
+		if (render.sprite.name == "block 0" && render2.sprite.name == "yellow  0") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {	
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.boards[7][jFound,kFound] = true;
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select(); 
+			}
+		}																			
 	}	
 
 	public IEnumerator TriggerWave() {
@@ -262,14 +335,77 @@ public class OperatorTile : MonoBehaviour {
 			for (int x = 0; x < OperatorManager.instance.xSize; x++) {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().color = selectedColor;
 
-					if (spriteClip.ContainsKey(OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name) && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-						sampleClip = samples[spriteClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]];
-						audioSourceOnTile.clip = sampleClip;
+					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == true) {
+						sampleClip = samples[0];
+						audioSource0.clip = sampleClip;
 						if (time + 1.0f > nextEventTime) {
-							audioSourceOnTile.PlayScheduled(nextEventTime);	
+							audioSource0.PlayScheduled(nextEventTime);	
+							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
+						}					
+					}		
+
+					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[1][x, y] == true) {
+						sampleClip = samples[1];
+						audioSource1.clip = sampleClip;
+						if (time + 1.0f > nextEventTime) {
+							audioSource1.PlayScheduled(nextEventTime);	
+							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
+						}					
+					}		
+
+					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[2][x, y] == true) {
+						sampleClip = samples[2];
+						audioSource2.clip = sampleClip;
+						if (time + 1.0f > nextEventTime) {
+							audioSource2.PlayScheduled(nextEventTime);	
 							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
 						}					
 					}
+
+					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[3][x, y] == true) {
+						sampleClip = samples[3];
+						audioSource3.clip = sampleClip;
+						if (time + 1.0f > nextEventTime) {
+							audioSource3.PlayScheduled(nextEventTime);	
+							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
+						}					
+					}		
+
+					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[4][x, y] == true) {
+						sampleClip = samples[4];
+						audioSource4.clip = sampleClip;
+						if (time + 1.0f > nextEventTime) {
+							audioSource4.PlayScheduled(nextEventTime);	
+							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
+						}					
+					}		
+
+					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[5][x, y] == true) {
+						sampleClip = samples[5];
+						audioSource5.clip = sampleClip;
+						if (time + 1.0f > nextEventTime) {
+							audioSource5.PlayScheduled(nextEventTime);	
+							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
+						}					
+					}	
+
+					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[6][x, y] == true) {
+						sampleClip = samples[6];
+						audioSource6.clip = sampleClip;
+						if (time + 1.0f > nextEventTime) {
+							audioSource6.PlayScheduled(nextEventTime);	
+							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
+						}					
+					}		
+
+					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[7][x, y] == true) {
+						sampleClip = samples[7];
+						audioSource7.clip = sampleClip;
+						if (time + 1.0f > nextEventTime) {
+							audioSource7.PlayScheduled(nextEventTime);	
+							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
+						}					
+					}																								
 					
 					yield return StartCoroutine(Delay());
 					StartCoroutine(UnTriggerWave());
