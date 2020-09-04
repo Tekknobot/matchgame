@@ -12,6 +12,7 @@ public class OperatorManager : MonoBehaviour {
 
 	public GameObject[,] tiles;
 	public bool[][,] boards = new bool[8][,];
+	public bool[][,] chops = new bool[1][,];
 
 	public bool IsShifting { get; set; }
 
@@ -44,6 +45,10 @@ public class OperatorManager : MonoBehaviour {
 
 		for (int x = 0; x < boards.Length; x++) { 
 			boards[x] = new bool[xSize,ySize];
-		}		
+		}	
+
+		for (int x = 0; x < chops.Length; x++) { 
+			chops[x] = new bool[xSize,ySize];
+		}				
 	}
 }

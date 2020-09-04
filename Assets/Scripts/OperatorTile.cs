@@ -28,11 +28,29 @@ public class OperatorTile : MonoBehaviour {
 	public Sprite turquoise;
 	public Sprite yellow;
 
+	public Sprite sample0;
+	public Sprite sample1;
+	public Sprite sample2;
+	public Sprite sample3;
+	public Sprite sample4;
+	public Sprite sample5;
+	public Sprite sample6;
+	public Sprite sample7;
+	public Sprite sample8;
+	public Sprite sample9;
+	public Sprite sample10;
+	public Sprite sample11;
+	public Sprite sample12;
+	public Sprite sample13;
+	public Sprite sample14;
+	public Sprite sample15;		
+
 	int jFound;
 	int kFound;	
 
 	private AudioSource audioSource;
 	public AudioClip[] samples;
+	public AudioClip[] chops;
 	private AudioClip sampleClip;
 
 	private AudioSource audioSourceOnTile;
@@ -45,6 +63,7 @@ public class OperatorTile : MonoBehaviour {
 	public AudioSource audioSource5;
 	public AudioSource audioSource6;
 	public AudioSource audioSource7;
+	public AudioSource audioSource8;
 	
 	public float bpm;
 	public float ms;
@@ -61,25 +80,27 @@ public class OperatorTile : MonoBehaviour {
 		{ "purple 0", 4 },
 		{ "red 0", 5 },
 		{ "turquoise  0", 6 },
-		{ "yellow  0", 7 },		
-
-		{ "sample 0", 8 },
-		{ "sample 1", 9 },
-		{ "sample 2", 10 },
-		{ "sample 3", 11 },
-		{ "sample 4", 12 },
-		{ "sample 5", 13 },
-		{ "sample 6", 14 },
-		{ "sample 7", 15 },	
-		{ "sample 8", 16 },
-		{ "sample 9", 17 },
-		{ "sample 10", 18 },
-		{ "sample 11", 19 },
-		{ "sample 12", 20 },
-		{ "sample 13", 21 },
-		{ "sample 14", 22 },
-		{ "sample 15", 23 },					
+		{ "yellow  0", 7 },						
 	};
+
+	Dictionary<string, int> chopClip = new Dictionary<string, int>() {
+		{ "sample 0", 0 },
+		{ "sample 1", 1 },
+		{ "sample 2", 2 },
+		{ "sample 3", 3 },
+		{ "sample 4", 4 },
+		{ "sample 5", 5 },
+		{ "sample 6", 6 },
+		{ "sample 7", 7 },	
+		{ "sample 8", 8 },
+		{ "sample 9", 9 },
+		{ "sample 10", 10 },
+		{ "sample 11", 11 },
+		{ "sample 12", 12 },
+		{ "sample 13", 13 },
+		{ "sample 14", 14 },
+		{ "sample 15", 15 },					
+	};	
 
 	void Awake() {
 		render = GetComponent<SpriteRenderer>();
@@ -108,7 +129,7 @@ public class OperatorTile : MonoBehaviour {
 
 	private void Select() {
 		if (render.sprite.name != "block 0") {
-			DisplayActiveBoard(spriteClip[render.sprite.name]);
+			DisplayActiveBoard();
 		}	
 		else {
 			return;
@@ -123,6 +144,12 @@ public class OperatorTile : MonoBehaviour {
 			audioSource.clip = sampleClip;
 			audioSource.Play();	
 		}
+
+		if (chopClip.ContainsKey(render.sprite.name)) {
+			sampleClip = chops[chopClip[render.sprite.name]];
+			audioSource.clip = sampleClip;
+			audioSource.Play();	
+		}		
 		
 		mainCamera.GetComponent<CameraShake>().shakecamera();
 		StartCoroutine(StopShakingCamera());
@@ -194,67 +221,180 @@ public class OperatorTile : MonoBehaviour {
 		return false;
 	}
 
-	public void DisplayActiveBoard(int index) {
+	public void DisplayActiveBoard() {
 		for (int y = 0; y < OperatorManager.instance.ySize; y++) {
 			for (int x = 0; x < OperatorManager.instance.xSize; x++) {
-				if (OperatorManager.instance.boards[index][x, y] == true && render.sprite.name == "blue 0") {
+				if (OperatorManager.instance.boards[0][x, y] == true && render.sprite.name == "blue 0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = blue;
 				}	
-				else if (OperatorManager.instance.boards[index][x, y] == false && render.sprite.name == "blue 0") {
+				else if (OperatorManager.instance.boards[0][x, y] == false && render.sprite.name == "blue 0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
 				}	
 
-				if (OperatorManager.instance.boards[index][x, y] == true && render.sprite.name == "green  0") {
+				if (OperatorManager.instance.boards[1][x, y] == true && render.sprite.name == "green  0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = green;
 				}	
-				else if (OperatorManager.instance.boards[index][x, y] == false && render.sprite.name == "green  0") {
+				else if (OperatorManager.instance.boards[1][x, y] == false && render.sprite.name == "green  0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
 				}	
 
-				if (OperatorManager.instance.boards[index][x, y] == true && render.sprite.name == "orange 0") {
+				if (OperatorManager.instance.boards[2][x, y] == true && render.sprite.name == "orange 0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = orange;
 				}	
-				else if (OperatorManager.instance.boards[index][x, y] == false && render.sprite.name == "orange 0") {
+				else if (OperatorManager.instance.boards[2][x, y] == false && render.sprite.name == "orange 0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
 				}
 
-				if (OperatorManager.instance.boards[index][x, y] == true && render.sprite.name == "pink 0") {
+				if (OperatorManager.instance.boards[3][x, y] == true && render.sprite.name == "pink 0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = pink;
 				}	
-				else if (OperatorManager.instance.boards[index][x, y] == false && render.sprite.name == "pink 0") {
+				else if (OperatorManager.instance.boards[3][x, y] == false && render.sprite.name == "pink 0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
 				}	
 
-				if (OperatorManager.instance.boards[index][x, y] == true && render.sprite.name == "purple 0") {
+				if (OperatorManager.instance.boards[4][x, y] == true && render.sprite.name == "purple 0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = purple;
 				}	
-				else if (OperatorManager.instance.boards[index][x, y] == false && render.sprite.name == "purple 0") {
+				else if (OperatorManager.instance.boards[4][x, y] == false && render.sprite.name == "purple 0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
 				}		
 
-				if (OperatorManager.instance.boards[index][x, y] == true && render.sprite.name == "red 0") {
+				if (OperatorManager.instance.boards[5][x, y] == true && render.sprite.name == "red 0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = red;
 				}	
-				else if (OperatorManager.instance.boards[index][x, y] == false && render.sprite.name == "red 0") {
+				else if (OperatorManager.instance.boards[5][x, y] == false && render.sprite.name == "red 0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
 				}	
 
-				if (OperatorManager.instance.boards[index][x, y] == true && render.sprite.name == "turquoise  0") {
+				if (OperatorManager.instance.boards[6][x, y] == true && render.sprite.name == "turquoise  0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = turquoise;
 				}	
-				else if (OperatorManager.instance.boards[index][x, y] == false && render.sprite.name == "turquoise  0") {
+				else if (OperatorManager.instance.boards[6][x, y] == false && render.sprite.name == "turquoise  0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
 				}
 
-				if (OperatorManager.instance.boards[index][x, y] == true && render.sprite.name == "yellow  0") {
+				if (OperatorManager.instance.boards[7][x, y] == true && render.sprite.name == "yellow  0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = yellow;
 				}	
-				else if (OperatorManager.instance.boards[index][x, y] == false && render.sprite.name == "yellow  0") {
+				else if (OperatorManager.instance.boards[7][x, y] == false && render.sprite.name == "yellow  0") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
 				}
-				
+
+				////
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 0") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample0;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 0") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 1") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample1;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 1") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 2") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample2;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 2") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 3") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample3;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 3") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 4") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample4;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 4") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}		
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 5") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample5;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 5") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 6") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample6;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 6") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}			
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 7") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample7;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 7") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 8") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample8;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 8") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 9") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample9;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 9") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 10") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample10;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 10") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 11") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample11;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 11") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 12") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample12;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 12") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 13") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample13;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 13") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 14") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample14;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 14") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}
+
+				if (OperatorManager.instance.chops[0][x, y] == true && render.sprite.name == "sample 15") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = sample15;
+				}	
+				else if (OperatorManager.instance.chops[0][x, y] == false && render.sprite.name == "sample 15") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}				
 			}
-		}
+		}				
 	}
 
 	public void CopySprite(SpriteRenderer render2) { 
@@ -325,7 +465,16 @@ public class OperatorTile : MonoBehaviour {
 				previousSelected.GetComponent<OperatorTile>().Deselect();
 				Select(); 
 			}
-		}																			
+		}	
+
+		if (render.sprite.name == "block 0") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {	
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.chops[0][jFound,kFound] = true;
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select(); 
+			}
+		}																				
 	}	
 
 	public IEnumerator TriggerWave() {
@@ -405,7 +554,16 @@ public class OperatorTile : MonoBehaviour {
 							audioSource7.PlayScheduled(nextEventTime);	
 							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
 						}					
-					}																								
+					}			
+
+					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.chops[0][x, y] == true) {
+						sampleClip = chops[chopClip[OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite.name]];
+						audioSource8.clip = sampleClip;
+						if (time + 1.0f > nextEventTime) {
+							audioSource8.PlayScheduled(nextEventTime);	
+							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
+						}					
+					}																											
 					
 					yield return StartCoroutine(Delay());
 					StartCoroutine(UnTriggerWave());
