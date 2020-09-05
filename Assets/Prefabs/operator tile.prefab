@@ -205,7 +205,7 @@ MonoBehaviour:
   audioSource5: {fileID: 4457022015771650012}
   audioSource6: {fileID: -6280183057356667119}
   audioSource7: {fileID: -8784558468396683308}
-  audioSource8: {fileID: -3554584574793152228}
+  chopSource: {fileID: -3554584574793152228}
   bpm: 0
   ms: 0
   numBeatsPerSegment: 1
