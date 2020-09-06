@@ -873,147 +873,244 @@ public class OperatorTile : MonoBehaviour {
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == true) {
 						sampleClip = samples[0];
 						audioSource0.clip = sampleClip;
-						audioSource0.Play();					
-					}		
+						audioSource0.Play();	
+						PadManager.instance.tiles[0,0].GetComponent<SpriteRenderer>().color = selectedColor;			
+					}	
+					else if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == false) {
+						PadManager.instance.tiles[0,0].GetComponent<SpriteRenderer>().color = Color.white;
+					} 
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[1][x, y] == true) {
 						sampleClip = samples[1];
 						audioSource1.clip = sampleClip;
-						audioSource1.Play();					
-					}		
+						audioSource1.Play();
+						PadManager.instance.tiles[1,0].GetComponent<SpriteRenderer>().color = selectedColor;					
+					}	
+					else if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == false) {
+						PadManager.instance.tiles[1,0].GetComponent<SpriteRenderer>().color = Color.white;
+					} 						
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[2][x, y] == true) {
 						sampleClip = samples[2];
 						audioSource2.clip = sampleClip;
-						audioSource2.Play();					
+						audioSource2.Play();
+						PadManager.instance.tiles[2,0].GetComponent<SpriteRenderer>().color = selectedColor;					
+					}
+					else if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == false) {
+						PadManager.instance.tiles[2,0].GetComponent<SpriteRenderer>().color = Color.white;
 					}
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[3][x, y] == true) {
 						sampleClip = samples[3];
 						audioSource3.clip = sampleClip;
-						audioSource3.Play();					
+						audioSource3.Play();
+						PadManager.instance.tiles[3,0].GetComponent<SpriteRenderer>().color = selectedColor;					
 					}		
+					else if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == false) {
+						PadManager.instance.tiles[3,0].GetComponent<SpriteRenderer>().color = Color.white;
+					}
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[4][x, y] == true) {
 						sampleClip = samples[4];
 						audioSource4.clip = sampleClip;
-						audioSource4.Play();					
-					}		
+						audioSource4.Play();
+						PadManager.instance.tiles[4,0].GetComponent<SpriteRenderer>().color = selectedColor;					
+					}	
+					else if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == false) {
+						PadManager.instance.tiles[4,0].GetComponent<SpriteRenderer>().color = Color.white;
+					}						
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[5][x, y] == true) {
 						sampleClip = samples[5];
 						audioSource5.clip = sampleClip;
-						audioSource5.Play();					
-					}	
+						audioSource5.Play();	
+						PadManager.instance.tiles[5,0].GetComponent<SpriteRenderer>().color = selectedColor;				
+					}
+					else if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == false) {
+						PadManager.instance.tiles[5,0].GetComponent<SpriteRenderer>().color = Color.white;
+					}						
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[6][x, y] == true) {
 						sampleClip = samples[6];
 						audioSource6.clip = sampleClip;
-						audioSource6.Play();					
-					}		
+						audioSource6.Play();
+						PadManager.instance.tiles[6,0].GetComponent<SpriteRenderer>().color = selectedColor;							
+					}
+					else if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == false) {
+						PadManager.instance.tiles[6,0].GetComponent<SpriteRenderer>().color = Color.white;
+					}							
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[7][x, y] == true) {
 						sampleClip = samples[7];
 						audioSource7.clip = sampleClip;
-						audioSource7.Play();				
-					}			
+						audioSource7.Play();
+						PadManager.instance.tiles[7,0].GetComponent<SpriteRenderer>().color = selectedColor;				
+					}	
+					else if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == false) {
+						PadManager.instance.tiles[7,0].GetComponent<SpriteRenderer>().color = Color.white;
+					}							
 
 					//Play chops
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 0" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[0];
 						chopSource.clip = sampleClip;
-						chopSource.Play();					
-					}	
+						chopSource.Play();
+						PadManager.instance.tiles[0,1].GetComponent<SpriteRenderer>().color = selectedColor;					
+					}
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 0" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[0,1].GetComponent<SpriteRenderer>().color = Color.white;
+					}		
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 1" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[1];
 						chopSource.clip = sampleClip;
-						chopSource.Play();					
-					}		
+						chopSource.Play();		
+						PadManager.instance.tiles[1,1].GetComponent<SpriteRenderer>().color = selectedColor;			
+					}	
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 1" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[1,1].GetComponent<SpriteRenderer>().color = Color.white;
+					}						
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 2" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[2];
 						chopSource.clip = sampleClip;
-						chopSource.Play();					
-					}	
+						chopSource.Play();	
+						PadManager.instance.tiles[2,1].GetComponent<SpriteRenderer>().color = selectedColor;				
+					}
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 2" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[2,1].GetComponent<SpriteRenderer>().color = Color.white;
+					}						
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 3" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[3];
 						chopSource.clip = sampleClip;
-						chopSource.Play();					
-					}		
+						chopSource.Play();
+						PadManager.instance.tiles[3,1].GetComponent<SpriteRenderer>().color = selectedColor;					
+					}
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 3" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[3,1].GetComponent<SpriteRenderer>().color = Color.white;
+					}							
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 4" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[4];
 						chopSource.clip = sampleClip;
-						chopSource.Play();					
+						chopSource.Play();		
+						PadManager.instance.tiles[4,1].GetComponent<SpriteRenderer>().color = selectedColor;			
 					}
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 4" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[4,1].GetComponent<SpriteRenderer>().color = Color.white;
+					}					
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 5" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[5];
 						chopSource.clip = sampleClip;
-						chopSource.Play();					
+						chopSource.Play();		
+						PadManager.instance.tiles[5,1].GetComponent<SpriteRenderer>().color = selectedColor;			
 					}	
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 5" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[5,1].GetComponent<SpriteRenderer>().color = Color.white;
+					}					
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 6" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[6];
 						chopSource.clip = sampleClip;
-						chopSource.Play();					
+						chopSource.Play();
+						PadManager.instance.tiles[6,1].GetComponent<SpriteRenderer>().color = selectedColor;					
 					}	
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 6" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[6,1].GetComponent<SpriteRenderer>().color = Color.white;
+					}					
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 7" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[7];
 						chopSource.clip = sampleClip;
-						chopSource.Play();				
-					}																																																						
+						chopSource.Play();
+						PadManager.instance.tiles[7,1].GetComponent<SpriteRenderer>().color = selectedColor;				
+					}
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 7" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[7,1].GetComponent<SpriteRenderer>().color = Color.white;
+					}																																																											
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 8" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[8];
 						chopSource.clip = sampleClip;
-						chopSource.Play();				
-					}	
+						chopSource.Play();		
+						PadManager.instance.tiles[0,2].GetComponent<SpriteRenderer>().color = selectedColor;		
+					}
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 8" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[1,2].GetComponent<SpriteRenderer>().color = Color.white;
+					}						
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 9" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[9];
 						chopSource.clip = sampleClip;
-						chopSource.Play();				
-					}		
+						chopSource.Play();		
+						PadManager.instance.tiles[1,2].GetComponent<SpriteRenderer>().color = selectedColor;		
+					}	
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 9" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[1,2].GetComponent<SpriteRenderer>().color = Color.white;
+					}						
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 10" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[10];
 						chopSource.clip = sampleClip;
-						chopSource.Play();					
+						chopSource.Play();
+						PadManager.instance.tiles[2,2].GetComponent<SpriteRenderer>().color = selectedColor;					
 					}	
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 10" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[2,2].GetComponent<SpriteRenderer>().color = Color.white;
+					}					
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 11" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[11];
 						chopSource.clip = sampleClip;
-						chopSource.Play();				
-					}		
+						chopSource.Play();	
+						PadManager.instance.tiles[3,2].GetComponent<SpriteRenderer>().color = selectedColor;			
+					}	
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 11" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[3,2].GetComponent<SpriteRenderer>().color = Color.white;
+					}						
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 12" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[12];
 						chopSource.clip = sampleClip;
-						chopSource.Play();				
+						chopSource.Play();		
+						PadManager.instance.tiles[4,2].GetComponent<SpriteRenderer>().color = selectedColor;		
 					}
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 12" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[4,2].GetComponent<SpriteRenderer>().color = Color.white;
+					}					
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 13" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[13];
 						chopSource.clip = sampleClip;
-						chopSource.Play();				
+						chopSource.Play();		
+						PadManager.instance.tiles[5,2].GetComponent<SpriteRenderer>().color = selectedColor;			
 					}	
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 13" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[5,2].GetComponent<SpriteRenderer>().color = Color.white;
+					}					
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 14" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[14];
 						chopSource.clip = sampleClip;
-						chopSource.Play();					
-					}	
+						chopSource.Play();			
+						PadManager.instance.tiles[6,2].GetComponent<SpriteRenderer>().color = selectedColor;			
+					}
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 14" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[6,2].GetComponent<SpriteRenderer>().color = Color.white;
+					}						
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 15" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[15];
 						chopSource.clip = sampleClip;
-						chopSource.Play();					
+						chopSource.Play();	
+						PadManager.instance.tiles[7,2].GetComponent<SpriteRenderer>().color = selectedColor;				
+					}
+					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 15" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+						PadManager.instance.tiles[7,2].GetComponent<SpriteRenderer>().color = Color.white;
 					}					
+
 					yield return StartCoroutine(Delay());
 					StartCoroutine(UnTriggerWave());
 			}
