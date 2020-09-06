@@ -234,6 +234,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whiteParticles: {fileID: 165192, guid: 13d1230e68dc2464ebcf7cbc4746b129, type: 3}
-  samples: []
-  spawnPoint: {x: 0, y: 0, z: 0}
-  padManagers: []
+  samples:
+  - {fileID: 8300000, guid: 72455811a2bf5724c81f0a79d5dfbb8c, type: 3}
+  - {fileID: 8300000, guid: 756829030cb339c4ba2948fefa415608, type: 3}
+  - {fileID: 8300000, guid: 0077e05fd99ac894da315ac195aa3320, type: 3}
+  - {fileID: 8300000, guid: e37c17f4373a39b4fbeed8de1e1b86a4, type: 3}
+  - {fileID: 8300000, guid: 3b5fecba5794c74488c32a002f6c092a, type: 3}
+  - {fileID: 8300000, guid: 53760ebeaba281e46b8e59e93c334436, type: 3}
+  - {fileID: 8300000, guid: 37001fc29b063504588bab0010370a23, type: 3}
+  - {fileID: 8300000, guid: 5214adf644f775441b30280cdc5f2de3, type: 3}
+  - {fileID: 8300000, guid: aae562420c0d1b445a7723bacb969822, type: 3}
+  - {fileID: 8300000, guid: c5b0891692ee0954b8040f90cca2bfba, type: 3}
+  - {fileID: 8300000, guid: 5c3ad8818cf661f459426347b25dd7df, type: 3}
+  - {fileID: 8300000, guid: 81367c6803afe63458b9b197c77c061c, type: 3}
+  - {fileID: 8300000, guid: f61370c4baaee66429ebe1901002bca8, type: 3}
+  - {fileID: 8300000, guid: 5ea73a5729b753a4b9054e4e020a2a54, type: 3}
+  - {fileID: 8300000, guid: dae13bab83979c34980ebe0828841fd0, type: 3}
+  - {fileID: 8300000, guid: a1934d0e529546e4cbd1678c695f2759, type: 3}

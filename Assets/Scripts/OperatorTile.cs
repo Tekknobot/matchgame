@@ -150,6 +150,7 @@ public class OperatorTile : MonoBehaviour {
 			sampleClip = chops[chopClip[render.sprite.name]];
 			audioSource.clip = sampleClip;
 			audioSource.Play();	
+			Debug.Log("Played.");
 		}		
 		
 		mainCamera.GetComponent<CameraShake>().shakecamera();
