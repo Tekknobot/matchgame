@@ -169,17 +169,249 @@ public class OperatorTile : MonoBehaviour {
 			clickedPad = GameObject.Find(hitInfo.collider.gameObject.name);
         } 
 
-		if (render.tag == "blocks" && render.color == Color.white && isSelected == true) {	
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "blue 0") {	
 			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
-				OperatorManager.instance.boards[spriteClip[previousSelected.render.sprite.name]][jFound, kFound] = false;
-
+				OperatorManager.instance.boards[0][jFound, kFound] = false;
 				render.sprite = block;
-
 				GetComponent<RotateYaxis>().flipTile();
 				StartCoroutine(resetflipTile());
 				Instantiate(whiteParticles, transform.position, Quaternion.identity);
 			}			
 		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "green  0") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.boards[1][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "orange 0") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.boards[2][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "pink 0") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.boards[3][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "purple 0") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.boards[4][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "red 0") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.boards[5][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "turquoise  0") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.boards[6][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "yellow  0") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.boards[7][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}		
+
+		/////	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 0") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 1") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}			
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 2") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 3") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 4") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 5") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 6") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 7") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}		
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 8") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}		
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 9") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}			
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 10") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 11") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 12") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 13") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 14") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "sample 15") {	
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.pad[0][jFound, kFound] = null;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}			
+		}		
+
+		////																
 
 		if (render.sprite == null) {
 		 	return;
