@@ -61,7 +61,7 @@ public class Tile : MonoBehaviour {
 		} else {
 			if (previousSelected == null) {
 				Select();
-			} else { //if (GetAllAdjacentTiles().Contains(previousSelected.gameObject)){
+			} else if (GetAllAdjacentTiles().Contains(previousSelected.gameObject)){
 				SwapSprite(previousSelected.render);
 				GetComponent<RotateYaxis>().flipTile();
 				StartCoroutine(resetflipTile());
