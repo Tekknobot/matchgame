@@ -1038,7 +1038,7 @@ public class OperatorTile : MonoBehaviour {
 						PadManager.instance.tiles[0,2].GetComponent<SpriteRenderer>().color = selectedColor;		
 					}
 					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 8" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-						PadManager.instance.tiles[1,2].GetComponent<SpriteRenderer>().color = Color.white;
+						PadManager.instance.tiles[0,2].GetComponent<SpriteRenderer>().color = Color.white;
 					}						
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 9" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
