@@ -641,218 +641,146 @@ public class OperatorTile : MonoBehaviour {
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == true) {
 						sampleClip = samples[0];
 						audioSource0.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							audioSource0.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						audioSource0.Play();					
 					}		
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[1][x, y] == true) {
 						sampleClip = samples[1];
 						audioSource1.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							audioSource1.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						audioSource1.Play();					
 					}		
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[2][x, y] == true) {
 						sampleClip = samples[2];
 						audioSource2.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							audioSource2.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						audioSource2.Play();					
 					}
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[3][x, y] == true) {
 						sampleClip = samples[3];
 						audioSource3.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							audioSource3.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						audioSource3.Play();					
 					}		
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[4][x, y] == true) {
 						sampleClip = samples[4];
 						audioSource4.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							audioSource4.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						audioSource4.Play();					
 					}		
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[5][x, y] == true) {
 						sampleClip = samples[5];
 						audioSource5.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							audioSource5.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						audioSource5.Play();					
 					}	
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[6][x, y] == true) {
 						sampleClip = samples[6];
 						audioSource6.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							audioSource6.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						audioSource6.Play();					
 					}		
 
 					if (gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[7][x, y] == true) {
 						sampleClip = samples[7];
 						audioSource7.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							audioSource7.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						audioSource7.Play();				
 					}			
 
 					//Play chops
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 0" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[0];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();					
 					}	
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 1" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[1];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();					
 					}		
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 2" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[2];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();					
 					}	
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 3" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[3];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();					
 					}		
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 4" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[4];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();					
 					}
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 5" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[5];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();					
 					}	
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 6" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[6];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();					
 					}	
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 7" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[7];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();				
 					}																																																						
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 8" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[8];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();				
 					}	
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 9" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[9];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();				
 					}		
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 10" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[10];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();					
 					}	
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 11" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[11];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();				
 					}		
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 12" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[12];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();				
 					}
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 13" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[13];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();				
 					}	
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 14" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[14];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();					
 					}	
 
 					if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 15" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						sampleClip = chops[15];
 						chopSource.clip = sampleClip;
-						if (time + 1.0f > nextEventTime) {
-							chopSource.PlayScheduled(nextEventTime);	
-							nextEventTime += 60.0f / bpm * numBeatsPerSegment;
-						}					
+						chopSource.Play();					
 					}					
 					yield return StartCoroutine(Delay());
 					StartCoroutine(UnTriggerWave());
