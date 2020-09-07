@@ -957,7 +957,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();
 						PadManager.instance.tiles[0,1].GetComponent<SpriteRenderer>().color = selectedColor;					
 					}
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 0" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[0,1].GetComponent<SpriteRenderer>().color = Color.white;
 					}		
 
@@ -967,7 +967,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();		
 						PadManager.instance.tiles[1,1].GetComponent<SpriteRenderer>().color = selectedColor;			
 					}	
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 1" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[1,1].GetComponent<SpriteRenderer>().color = Color.white;
 					}						
 
@@ -977,7 +977,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();	
 						PadManager.instance.tiles[2,1].GetComponent<SpriteRenderer>().color = selectedColor;				
 					}
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 2" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[2,1].GetComponent<SpriteRenderer>().color = Color.white;
 					}						
 
@@ -987,7 +987,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();
 						PadManager.instance.tiles[3,1].GetComponent<SpriteRenderer>().color = selectedColor;					
 					}
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 3" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[3,1].GetComponent<SpriteRenderer>().color = Color.white;
 					}							
 
@@ -997,7 +997,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();		
 						PadManager.instance.tiles[4,1].GetComponent<SpriteRenderer>().color = selectedColor;			
 					}
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 4" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[4,1].GetComponent<SpriteRenderer>().color = Color.white;
 					}					
 
@@ -1007,7 +1007,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();		
 						PadManager.instance.tiles[5,1].GetComponent<SpriteRenderer>().color = selectedColor;			
 					}	
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 5" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[5,1].GetComponent<SpriteRenderer>().color = Color.white;
 					}					
 
@@ -1017,7 +1017,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();
 						PadManager.instance.tiles[6,1].GetComponent<SpriteRenderer>().color = selectedColor;					
 					}	
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 6" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[6,1].GetComponent<SpriteRenderer>().color = Color.white;
 					}					
 
@@ -1027,7 +1027,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();
 						PadManager.instance.tiles[7,1].GetComponent<SpriteRenderer>().color = selectedColor;				
 					}
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 7" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[7,1].GetComponent<SpriteRenderer>().color = Color.white;
 					}																																																											
 
@@ -1037,7 +1037,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();		
 						PadManager.instance.tiles[0,2].GetComponent<SpriteRenderer>().color = selectedColor;		
 					}
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 8" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[0,2].GetComponent<SpriteRenderer>().color = Color.white;
 					}						
 
@@ -1047,7 +1047,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();		
 						PadManager.instance.tiles[1,2].GetComponent<SpriteRenderer>().color = selectedColor;		
 					}	
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 9" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[1,2].GetComponent<SpriteRenderer>().color = Color.white;
 					}						
 
@@ -1057,7 +1057,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();
 						PadManager.instance.tiles[2,2].GetComponent<SpriteRenderer>().color = selectedColor;					
 					}	
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 10" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[2,2].GetComponent<SpriteRenderer>().color = Color.white;
 					}					
 
@@ -1067,7 +1067,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();	
 						PadManager.instance.tiles[3,2].GetComponent<SpriteRenderer>().color = selectedColor;			
 					}	
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 11" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[3,2].GetComponent<SpriteRenderer>().color = Color.white;
 					}						
 
@@ -1077,7 +1077,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();		
 						PadManager.instance.tiles[4,2].GetComponent<SpriteRenderer>().color = selectedColor;		
 					}
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 12" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[4,2].GetComponent<SpriteRenderer>().color = Color.white;
 					}					
 
@@ -1087,7 +1087,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();		
 						PadManager.instance.tiles[5,2].GetComponent<SpriteRenderer>().color = selectedColor;			
 					}	
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 13" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[5,2].GetComponent<SpriteRenderer>().color = Color.white;
 					}					
 
@@ -1097,7 +1097,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();			
 						PadManager.instance.tiles[6,2].GetComponent<SpriteRenderer>().color = selectedColor;			
 					}
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 14" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[6,2].GetComponent<SpriteRenderer>().color = Color.white;
 					}						
 
@@ -1107,7 +1107,7 @@ public class OperatorTile : MonoBehaviour {
 						chopSource.Play();	
 						PadManager.instance.tiles[7,2].GetComponent<SpriteRenderer>().color = selectedColor;				
 					}
-					else if (OperatorManager.instance.pad[0][jFound,kFound] != "sample 15" && OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
+					else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 						PadManager.instance.tiles[7,2].GetComponent<SpriteRenderer>().color = Color.white;
 					}					
 
