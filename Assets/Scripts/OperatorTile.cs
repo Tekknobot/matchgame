@@ -138,7 +138,7 @@ public class OperatorTile : MonoBehaviour {
 			return;
 		}
 
-		isSelected = true;
+		//isSelected = true;
 		render.color = selectedColor;
 		previousSelected = GetComponent<OperatorTile>();	
 
