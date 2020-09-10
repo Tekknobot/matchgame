@@ -70,6 +70,16 @@ public class OperatorTile : MonoBehaviour {
 	public float bpm;
 	public float ms;
 
+	private float kickVolume = 1f;
+	private float snareVolume = 1f;
+	private float cHatVolume = 1f;
+	private float oHatVolume = 1f;
+	private float clapVolume = 1f;
+	private float crashVolume = 1f;
+	private float rideVolume = 1f;
+	private float rimVolume = 1f;	
+	private float chopsVolume = 1f;		
+
 	public SpriteRenderer[,] blockTiles;
 	public SpriteRenderer[,] padTiles;
 
@@ -137,7 +147,34 @@ public class OperatorTile : MonoBehaviour {
 
 	void Update() {
 		bpm = GameObject.Find ("Slider").GetComponent<Slider>().value;	
-		GameObject.Find ("BPM").GetComponent<Text>().text = bpm.ToString();		
+		GameObject.Find ("BPM").GetComponent<Text>().text = bpm.ToString();	
+
+		kickVolume = GameObject.Find ("Kick").GetComponent<Slider>().value;
+		audioSource0.volume = kickVolume;	
+
+		snareVolume = GameObject.Find ("Snare").GetComponent<Slider>().value;
+		audioSource1.volume = snareVolume;	
+
+		cHatVolume = GameObject.Find ("CHat").GetComponent<Slider>().value;
+		audioSource2.volume = cHatVolume;		
+
+		oHatVolume = GameObject.Find ("OHat").GetComponent<Slider>().value;
+		audioSource3.volume = oHatVolume;	
+
+		clapVolume = GameObject.Find ("Clap").GetComponent<Slider>().value;
+		audioSource4.volume = clapVolume;	
+
+		crashVolume = GameObject.Find ("Crash").GetComponent<Slider>().value;
+		audioSource5.volume = crashVolume;	
+
+		rideVolume = GameObject.Find ("Ride").GetComponent<Slider>().value;
+		audioSource6.volume = rideVolume;		
+
+		rimVolume = GameObject.Find ("Rim").GetComponent<Slider>().value;
+		audioSource7.volume = rimVolume;		
+
+		chopsVolume = GameObject.Find ("SampleSlider").GetComponent<Slider>().value;
+		audioSourceChops.volume = chopsVolume;					
 	}	
 
 	private void Select() {
