@@ -1183,10 +1183,10 @@ public class OperatorTile : MonoBehaviour {
 		}		
 	}		
 
-    public void SetBPM(float bpmValue)
-    {
-        bpm = bpmValue;
-    }	
+    // public void SetBPM(float bpmValue)
+    // {
+    //     bpm = bpmValue;
+    // }	
 
 	public IEnumerator Delay() {
 		ms = 60000 / bpm / 1000 / 4;

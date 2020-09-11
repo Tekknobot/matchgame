@@ -3810,6 +3810,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4458058803506516848, guid: f4b486ca2236ae24b9b706fca9811b40,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458058803506516848, guid: f4b486ca2236ae24b9b706fca9811b40,
+        type: 3}
       propertyPath: m_WholeNumbers
       value: 1
       objectReference: {fileID: 0}
