@@ -83,7 +83,10 @@ public class OperatorTile : MonoBehaviour {
 	public SpriteRenderer[,] blockTiles;
 	public SpriteRenderer[,] padTiles;
 
-	bool hasCoroutineStarted = false;
+	bool hasCoroutineStarted = false;	
+
+	float lastbeatTime;
+	float nextbeatTime;
 
 	Dictionary<string, int> spriteClip = new Dictionary<string, int>() {
 		{ "blue 0", 0 },
@@ -1159,7 +1162,7 @@ public class OperatorTile : MonoBehaviour {
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 							padTiles[7,2].color = Color.white;
 						}
-
+						
 						yield return StartCoroutine(Delay());
 
 						if (!hasCoroutineStarted) {
@@ -1183,14 +1186,12 @@ public class OperatorTile : MonoBehaviour {
 		}		
 	}		
 
-    // public void SetBPM(float bpmValue)
-    // {
-    //     bpm = bpmValue;
-    // }	
-
 	public IEnumerator Delay() {
-		ms = 60000 / bpm / 1000 / 4;
-		yield return new WaitForSeconds(ms);
+		ms = 60 / bpm / 4;
+		Debug.Log(ms);
+		nextbeatTime = Time.time;
+		nextbeatTime += ms;
+		yield return new WaitForSeconds(nextbeatTime - Time.time);
 	}
 
 	IEnumerator StopShakingCamera() {
