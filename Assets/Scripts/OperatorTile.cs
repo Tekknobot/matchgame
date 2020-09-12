@@ -148,9 +148,10 @@ public class OperatorTile : MonoBehaviour {
 		StartCoroutine(TriggerWave());	
     }
 
-	void Update() {
+	void FixedUpdate() {
 		bpm = GameObject.Find ("Slider").GetComponent<Slider>().value;	
 		GameObject.Find ("BPM").GetComponent<Text>().text = bpm.ToString();	
+		//GameObject.Find ("ms").GetComponent<Text>().text = ms.ToString();
 
 		kickVolume = GameObject.Find ("Kick").GetComponent<Slider>().value;
 		audioSource0.volume = kickVolume;	
@@ -1188,10 +1189,11 @@ public class OperatorTile : MonoBehaviour {
 
 	public IEnumerator Delay() {
 		ms = 60 / bpm / 4;
-		Debug.Log(ms);
+		//Debug.Log(ms);
 		nextbeatTime = Time.time;
 		nextbeatTime += ms;
 		yield return new WaitForSeconds(nextbeatTime - Time.time);
+		//Debug.Log(nextbeatTime - Time.time);
 	}
 
 	IEnumerator StopShakingCamera() {
