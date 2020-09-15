@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pads
   - blocks
+  - Canvas
   layers:
   - Default
   - TransparentFX

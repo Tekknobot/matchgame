@@ -143,7 +143,6 @@ public class OperatorTile : MonoBehaviour {
 				padTiles[x,y] = PadManager.instance.tiles[x, y].GetComponent<SpriteRenderer>();
 			}
 		}
-
 		StartCoroutine(TriggerWave());
     }
 
@@ -1185,7 +1184,7 @@ public class OperatorTile : MonoBehaviour {
 
 	public IEnumerator Delay() {
 		nextbeatTime += ms;
-		yield return new WaitForSeconds(nextbeatTime - Time.time);
+		yield return new WaitForSeconds(nextbeatTime - Time.timeSinceLevelLoad);
 	}
 
 	IEnumerator StopShakingCamera() {
