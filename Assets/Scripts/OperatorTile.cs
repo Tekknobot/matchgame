@@ -148,6 +148,7 @@ public class OperatorTile : MonoBehaviour {
     }
 
 	void FixedUpdate() {
+		ms = 60 / bpm / 4;
 		bpm = GameObject.Find ("Slider").GetComponent<Slider>().value;
 		GameObject.Find ("BPM").GetComponent<Text>().text = bpm.ToString();
 		//GameObject.Find ("ms").GetComponent<Text>().text = ms.ToString();
@@ -1183,7 +1184,6 @@ public class OperatorTile : MonoBehaviour {
 	}
 
 	public IEnumerator Delay() {
-		ms = 60 / bpm / 4;
 		nextbeatTime += ms;
 		yield return new WaitForSeconds(nextbeatTime - Time.time);
 	}
