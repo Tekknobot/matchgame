@@ -49,6 +49,6 @@ public class Spectrum : MonoBehaviour
         var width = pointDistance*viewSpectrum.Count;
 
         lineRenderer.SetVertexCount(viewSpectrum.Count);
-        lineRenderer.SetPositions(viewSpectrum.Select((x, i) => new Vector3(-width/2 + i*pointDistance, x*54*modifier)).ToArray());
+        lineRenderer.SetPositions(viewSpectrum.Select((x, i) => new Vector3(-width/2 + i*pointDistance, x*34*modifier)).ToArray());
     }
 }
