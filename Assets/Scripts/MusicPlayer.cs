@@ -63,8 +63,9 @@ public class MusicPlayer : MonoBehaviour
     void Awake()
     {
         //being able to test in unity
-        if (Application.isEditor) absolutePath = "C:/Unity Projects/KontrolSongs";
-        //if (Application.isEditor) absolutePath = GetAndroidExternalFilesDir();
+        //if (Application.isEditor) absolutePath = "C:/Unity Projects/KontrolSongs";
+
+        GameObject.Find ("PATH").GetComponent<Text>().text = GetAndroidExternalFilesDir().ToString();
     
         if (source == null) source = gameObject.AddComponent<AudioSource>();
     
@@ -126,7 +127,7 @@ public class MusicPlayer : MonoBehaviour
     {
         clips.Clear();
         // get all valid files
-        var info = new DirectoryInfo(absolutePath);
+        var info = new DirectoryInfo(GetAndroidExternalFilesDir());
         soundFiles = info.GetFiles()
             .Where(f => IsValidFileType(f.Name))
             .ToArray();
