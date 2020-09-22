@@ -4,13 +4,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-    
+using UnityEngine.SceneManagement;
+
 public class MusicPlayer : MonoBehaviour
 {
+    public static MusicPlayer instance;
+
     public enum SeekDirection { Forward, Backward }
     
     public AudioSource source;
     public List<AudioClip> clips = new List<AudioClip>();
+    public List<float> chopTime = new List<float>();
+    public List<AudioClip> song = new List<AudioClip>();
     
     [SerializeField] [HideInInspector] private int currentIndex = 0;
     
@@ -22,6 +27,8 @@ public class MusicPlayer : MonoBehaviour
     public Button play;
     public Button next;
     public Button reload;
+    public Button chop;
+    public Button clear;
 
     public AudioSource audioSource;
     public Slider slider;
@@ -62,6 +69,8 @@ public class MusicPlayer : MonoBehaviour
 
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+
         //being able to test in unity
         if (Application.isEditor) absolutePath = "C:/Unity Projects/KontrolSongs";
 
@@ -74,6 +83,8 @@ public class MusicPlayer : MonoBehaviour
         next.onClick.AddListener(nextTaskOnClick);
         reload.onClick.AddListener(reloadTaskOnClick);
 
+        chop.onClick.AddListener(chopTaskOnClick);
+
         ReloadSounds();
     }
  
@@ -84,8 +95,10 @@ public class MusicPlayer : MonoBehaviour
  
     public void Update()
     {
-        if (audioSource.isPlaying) {
-            slider.value = audioSource.time / audioSource.clip.length;
+        if (audioSource) {
+            if (audioSource.isPlaying) {
+                slider.value = audioSource.time / audioSource.clip.length;
+            }
         }
     }    
     
@@ -105,7 +118,13 @@ public class MusicPlayer : MonoBehaviour
 
     void reloadTaskOnClick() {
         ReloadSounds();
-    }                    
+    }     
+
+    void chopTaskOnClick() {
+        chopTime.Add(audioSource.time);
+        song.Add(clips[currentIndex]);
+        Debug.Log("Sample chopped!");
+    }  
     
     void Seek(SeekDirection d)
     {

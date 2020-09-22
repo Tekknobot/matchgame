@@ -87,6 +87,8 @@ public class OperatorTile : MonoBehaviour {
 
 	float nextbeatTime;
 
+	private MusicPlayer player;
+
 	Dictionary<string, int> spriteClip = new Dictionary<string, int>() {
 		{ "blue 0", 0 },
 		{ "green  0", 1 },
@@ -118,6 +120,7 @@ public class OperatorTile : MonoBehaviour {
 	};
 
 	void Awake() {
+		player =  GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
 		render = GetComponent<SpriteRenderer>();
 		mainCamera = Camera.main;
 		Deselect();
@@ -198,11 +201,118 @@ public class OperatorTile : MonoBehaviour {
 			audioSource.Play();
 		}
 
-		if (chopClip.ContainsKey(render.sprite.name)) {
-			sampleClip = chops[chopClip[render.sprite.name]];
-			audioSourceChops.clip = sampleClip;
+		//Chops
+		if (render.sprite.name == "sample 0") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[0];
 			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[1]-player.chopTime[0]));					
 		}
+
+		if (render.sprite.name == "sample 1") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[1];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[2]-player.chopTime[1]));					
+		}	
+
+		if (render.sprite.name == "sample 2") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[2];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[3]-player.chopTime[2]));					
+		}		
+
+		if (render.sprite.name == "sample 3") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[3];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[4]-player.chopTime[3]));					
+		}	
+
+		if (render.sprite.name == "sample 4") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[4];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[5]-player.chopTime[4]));					
+		}
+
+		if (render.sprite.name == "sample 5") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[5];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[6]-player.chopTime[5]));					
+		}
+
+		if (render.sprite.name == "sample 6") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[6];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[7]-player.chopTime[6]));					
+		}	
+
+		if (render.sprite.name == "sample 7") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[7];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[8]-player.chopTime[7]));					
+		}	
+
+		if (render.sprite.name == "sample 8") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[8];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[9]-player.chopTime[8]));					
+		}	
+
+		if (render.sprite.name == "sample 9") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[9];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[10]-player.chopTime[9]));					
+		}	
+
+		if (render.sprite.name == "sample 10") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[10];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[11]-player.chopTime[10]));					
+		}	
+
+		if (render.sprite.name == "sample 11") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[11];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[12]-player.chopTime[11]));					
+		}	
+
+		if (render.sprite.name == "sample 12") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[12];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[13]-player.chopTime[12]));					
+		}	
+
+		if (render.sprite.name == "sample 13") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[13];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[14]-player.chopTime[13]));					
+		}	
+
+		if (render.sprite.name == "sample 14") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[14];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[15]-player.chopTime[14]));					
+		}	
+
+		if (render.sprite.name == "sample 15") {
+			audioSourceChops.clip = player.song[0];
+			audioSourceChops.time = player.chopTime[15];
+			audioSourceChops.Play();
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[16]-player.chopTime[15]));					
+		}																										
 
 		mainCamera.GetComponent<CameraShake>().shakecamera();
 		StartCoroutine(StopShakingCamera());
@@ -1004,9 +1114,10 @@ public class OperatorTile : MonoBehaviour {
 
 						//Play chops
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 0" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[0];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[0];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[1]-player.chopTime[0]));
 							padTiles[0,1].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1014,9 +1125,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 1" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[1];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[1];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[2]-player.chopTime[1]));	
 							padTiles[1,1].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1024,9 +1136,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 2" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[2];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[2];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[3]-player.chopTime[2]));
 							padTiles[2,1].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1034,9 +1147,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 3" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[3];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[3];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[4]-player.chopTime[3]));
 							padTiles[3,1].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1044,9 +1158,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 4" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[4];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[4];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[5]-player.chopTime[4]));
 							padTiles[4,1].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1054,9 +1169,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 5" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[5];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[5];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[6]-player.chopTime[5]));
 							padTiles[5,1].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1064,9 +1180,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 6" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[6];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[6];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[7]-player.chopTime[6]));
 							padTiles[6,1].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1074,19 +1191,20 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 7" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[7];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[7];
 							audioSourceChops.Play();
-							padTiles[7,1].color = selectedColor;
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[8]-player.chopTime[7]));
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 							padTiles[7,1].color = Color.white;
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 8" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[8];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[8];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[9]-player.chopTime[8]));
 							padTiles[0,2].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1094,9 +1212,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 9" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[9];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[9];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[10]-player.chopTime[9]));
 							padTiles[1,2].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1104,9 +1223,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 10" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[10];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[10];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[11]-player.chopTime[10]));
 							padTiles[2,2].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1114,9 +1234,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 11" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[11];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[11];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[12]-player.chopTime[11]));
 							padTiles[3,2].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1124,9 +1245,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 12" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[12];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[12];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[13]-player.chopTime[12]));
 							padTiles[4,2].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1134,9 +1256,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 13" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[13];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[13];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[14]-player.chopTime[13]));
 							padTiles[5,2].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1144,9 +1267,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 14" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[14];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[14];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[15]-player.chopTime[14]));
 							padTiles[6,2].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
@@ -1154,9 +1278,10 @@ public class OperatorTile : MonoBehaviour {
 						}
 
 						if (OperatorManager.instance.pad[0][jFound,kFound] == "sample 15" && OperatorManager.instance.chops[0][x, y] == true && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
-							sampleClip = chops[15];
-							audioSourceChops.clip = sampleClip;
+							audioSourceChops.clip = player.song[0];
+							audioSourceChops.time = player.chopTime[15];
 							audioSourceChops.Play();
+							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[16]-player.chopTime[15]));
 							padTiles[7,2].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
