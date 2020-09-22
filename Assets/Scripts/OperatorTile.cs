@@ -200,6 +200,7 @@ public class OperatorTile : MonoBehaviour {
 			sampleClip = samples[spriteClip[render.sprite.name]];
 			audioSource.clip = sampleClip;
 			audioSource.Play();
+			render.color = selectedColor;
 		}
 
 		//Chops
@@ -207,112 +208,128 @@ public class OperatorTile : MonoBehaviour {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[0];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[1]-player.chopTime[0]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[1]-player.chopTime[0]));
+			render.color = selectedColor;					
 		}
 
 		if (render.sprite.name == "sample 1" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[1];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[2]-player.chopTime[1]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[2]-player.chopTime[1]));
+			render.color = selectedColor;					
 		}	
 
 		if (render.sprite.name == "sample 2" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[2];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[3]-player.chopTime[2]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[3]-player.chopTime[2]));	
+			render.color = selectedColor;				
 		}		
 
 		if (render.sprite.name == "sample 3" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[3];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[4]-player.chopTime[3]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[4]-player.chopTime[3]));
+			render.color = selectedColor;					
 		}	
 
 		if (render.sprite.name == "sample 4" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[4];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[5]-player.chopTime[4]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[5]-player.chopTime[4]));
+			render.color = selectedColor;					
 		}
 
 		if (render.sprite.name == "sample 5" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[5];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[6]-player.chopTime[5]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[6]-player.chopTime[5]));
+			render.color = selectedColor;					
 		}
 
 		if (render.sprite.name == "sample 6" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[6];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[7]-player.chopTime[6]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[7]-player.chopTime[6]));
+			render.color = selectedColor;					
 		}	
 
 		if (render.sprite.name == "sample 7" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[7];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[8]-player.chopTime[7]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[8]-player.chopTime[7]));
+			render.color = selectedColor;					
 		}	
 
 		if (render.sprite.name == "sample 8" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[8];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[9]-player.chopTime[8]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[9]-player.chopTime[8]));
+			render.color = selectedColor;					
 		}	
 
 		if (render.sprite.name == "sample 9" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[9];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[10]-player.chopTime[9]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[10]-player.chopTime[9]));	
+			render.color = selectedColor;				
 		}	
 
 		if (render.sprite.name == "sample 10" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[10];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[11]-player.chopTime[10]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[11]-player.chopTime[10]));
+			render.color = selectedColor;					
 		}	
 
 		if (render.sprite.name == "sample 11" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[11];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[12]-player.chopTime[11]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[12]-player.chopTime[11]));
+			render.color = selectedColor;					
 		}	
 
 		if (render.sprite.name == "sample 12" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[12];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[13]-player.chopTime[12]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[13]-player.chopTime[12]));	
+			render.color = selectedColor;				
 		}	
 
 		if (render.sprite.name == "sample 13" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[13];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[14]-player.chopTime[13]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[14]-player.chopTime[13]));
+			render.color = selectedColor;					
 		}	
 
 		if (render.sprite.name == "sample 14" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[14];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[15]-player.chopTime[14]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[15]-player.chopTime[14]));
+			render.color = selectedColor;					
 		}	
 
 		if (render.sprite.name == "sample 15" && player.chopTime.Count > 16) {
 			audioSourceChops.clip = player.song[0];
 			audioSourceChops.time = player.chopTime[15];
 			audioSourceChops.Play();
-			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[16]-player.chopTime[15]));					
+			audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[16]-player.chopTime[15]));
+			render.color = selectedColor;					
 		}																										
 
 		mainCamera.GetComponent<CameraShake>().shakecamera();
