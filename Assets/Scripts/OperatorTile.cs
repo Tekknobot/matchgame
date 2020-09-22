@@ -1196,6 +1196,7 @@ public class OperatorTile : MonoBehaviour {
 							audioSourceChops.time = player.chopTime[7];
 							audioSourceChops.Play();
 							audioSourceChops.SetScheduledEndTime(AudioSettings.dspTime+(player.chopTime[8]-player.chopTime[7]));
+							padTiles[7,1].color = selectedColor;
 						}
 						else if (OperatorManager.instance.chops[0][x, y] == false && gameObject.name == OperatorManager.instance.tiles[x, y].name) {
 							padTiles[7,1].color = Color.white;

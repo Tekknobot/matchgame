@@ -7,5 +7,10 @@ public class SceneLoader : MonoBehaviour {
     {
         SceneManager.LoadScene(sceneNo);
     }
+
+    public void clearSamplesOnClick() {
+        GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().chopTime.Clear();
+        GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().song.Clear();               
+    }      
  
 }
