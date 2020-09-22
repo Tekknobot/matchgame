@@ -69,6 +69,7 @@ public class MusicPlayer : MonoBehaviour
 
     void Awake()
     {
+        if (GameObject.FindGameObjectsWithTag("MusicPlayer").Length > 1) Destroy(GameObject.FindGameObjectWithTag("MusicPlayer"));
         DontDestroyOnLoad(gameObject);
 
         //being able to test in unity
@@ -123,7 +124,10 @@ public class MusicPlayer : MonoBehaviour
     void chopTaskOnClick() {
         chopTime.Add(audioSource.time);
         song.Add(clips[currentIndex]);
-        Debug.Log("Sample chopped!");
+        GameObject.Find ("ChopCount").GetComponent<Text>().text = chopTime.Count.ToString();
+        if (chopTime.Count > 16) {
+            GameObject.Find ("ChopCount").GetComponent<Text>().color = Color.red;
+        }    
     }  
     
     void Seek(SeekDirection d)
