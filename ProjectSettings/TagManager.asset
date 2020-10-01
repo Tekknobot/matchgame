@@ -8,6 +8,11 @@ TagManager:
   - blocks
   - Canvas
   - MusicPlayer
+  - Panel
+  - SFX
+  - SEQ
+  - CHOPS
+  - tile
   layers:
   - Default
   - TransparentFX

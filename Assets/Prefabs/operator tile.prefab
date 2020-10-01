@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: -3554584574793152228}
   m_Layer: 0
   m_Name: operator tile
-  m_TagString: Untagged
+  m_TagString: tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,7 +208,6 @@ MonoBehaviour:
   chopSource: {fileID: -3554584574793152228}
   bpm: 0
   ms: 0
-  player: {fileID: 4953042891129516362, guid: 3e36e6a0826cc85479b184a5b556df95, type: 3}
 --- !u!82 &-3731806925748220179
 AudioSource:
   m_ObjectHideFlags: 0

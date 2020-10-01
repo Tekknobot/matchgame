@@ -85,6 +85,7 @@ public class MusicPlayer : MonoBehaviour
         reload.onClick.AddListener(reloadTaskOnClick);
 
         chop.onClick.AddListener(chopTaskOnClick);
+        clear.onClick.AddListener(clearTaskOnClick);
 
         ReloadSounds();
     }
@@ -129,6 +130,12 @@ public class MusicPlayer : MonoBehaviour
             GameObject.Find ("ChopCount").GetComponent<Text>().color = Color.red;
         }    
     }  
+
+    void clearTaskOnClick() {
+        GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().chopTime.Clear();
+        GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().song.Clear();  
+        GameObject.Find ("ChopCount").GetComponent<Text>().text = "0";
+    }      
     
     void Seek(SeekDirection d)
     {
