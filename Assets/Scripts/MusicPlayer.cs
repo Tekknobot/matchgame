@@ -135,6 +135,7 @@ public class MusicPlayer : MonoBehaviour
         GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().chopTime.Clear();
         GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().song.Clear();  
         GameObject.Find ("ChopCount").GetComponent<Text>().text = "0";
+        GameObject.Find ("ChopCount").GetComponent<Text>().color = Color.white;
     }      
     
     void Seek(SeekDirection d)
