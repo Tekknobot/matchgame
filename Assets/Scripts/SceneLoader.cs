@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
  
 public class SceneLoader : MonoBehaviour {
@@ -9,7 +10,7 @@ public class SceneLoader : MonoBehaviour {
     public AudioSource audioSource;
 
     public Vector3 startPoint;
-    public Vector3 endPoint;  
+    public Vector3 endPoint; 
 
     public float journeyTime = 3f;
     private float startTime;
@@ -17,17 +18,11 @@ public class SceneLoader : MonoBehaviour {
 
     void Start()
     {
-        // Note the time at the start of the animation.
         startTime = Time.time;
     }      
 
     void Update() {
         float fracComplete = (Time.time - startTime) / journeyTime;
-    }
-
-    public void LoadGameOnClick() {
-        panels.transform.position = Vector3.Slerp(startPoint, endPoint, fracComplete);       
-        snow.SetActive(false);
     }
 
     public void LoadOperatorOnClick() {
@@ -43,7 +38,10 @@ public class SceneLoader : MonoBehaviour {
 
     public void clearSamplesOnClick() {
         GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().chopTime.Clear();
-        GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().song.Clear();               
+        GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().song.Clear();
+        GameObject.Find ("ChopCount").GetComponent<Text>().text = "0";
+        GameObject.Find ("ChopCount").GetComponent<Text>().color = Color.white;        
+        Debug.Log("Samples clear!");               
     }      
 
     public void stopCoroutineOnClick() {

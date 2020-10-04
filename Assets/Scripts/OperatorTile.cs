@@ -50,6 +50,7 @@ public class OperatorTile : MonoBehaviour {
 
 	private AudioSource audioSource;
 	private AudioSource audioSourceChops;
+	
 	public AudioClip[] samples;
 	public AudioClip[] chops;
 	private AudioClip sampleClip;
@@ -128,9 +129,9 @@ public class OperatorTile : MonoBehaviour {
     }
 
 	void Start() {
-		//audioSource = SEQAudioManager.instance.GetComponent<AudioSource>();
-		audioSource = GameObject.Find("Spectrum").GetComponent<AudioSource>();
-		audioSourceChops = CHOPSAudioManager.instance.GetComponent<AudioSource>();
+		audioSource = SEQAudioManager.instance.GetComponent<AudioSource>();
+		audioSourceChops = GameObject.Find("Spectrum").GetComponent<AudioSource>();
+		//audioSourceChops = CHOPSAudioManager.instance.GetComponent<AudioSource>();
 		audioSourceOnTile = gameObject.GetComponent<AudioSource>();
 
 		bpm = GameObject.Find ("Slider").GetComponent<Slider>().value;
