@@ -208,6 +208,8 @@ MonoBehaviour:
   chopSource: {fileID: -3554584574793152228}
   bpm: 0
   ms: 0
+  sceneButton: {fileID: 3060567613095746503, guid: 31dc3463ec1d4bc418fb0b1fe7a5d48f,
+    type: 3}
 --- !u!82 &-3731806925748220179
 AudioSource:
   m_ObjectHideFlags: 0
