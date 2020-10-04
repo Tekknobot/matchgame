@@ -2436,7 +2436,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 570699095}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 46673987}
+        m_MethodName: clearSamplesOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &570699095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8451,17 +8462,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2062394951}
-        m_MethodName: clearSamplesOnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1858080821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9572,6 +9572,11 @@ PrefabInstance:
       propertyPath: clear
       value: 
       objectReference: {fileID: 570699094}
+    - target: {fileID: 4953042891129516362, guid: 3e36e6a0826cc85479b184a5b556df95,
+        type: 3}
+      propertyPath: scratch
+      value: 
+      objectReference: {fileID: 8300000, guid: b5e41d4c2fef7104eac3e9b19afa35d9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e36e6a0826cc85479b184a5b556df95, type: 3}
 --- !u!1001 &5950515150565520018

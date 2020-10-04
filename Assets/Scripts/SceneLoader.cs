@@ -26,7 +26,7 @@ public class SceneLoader : MonoBehaviour {
     }
 
     public void LoadOperatorOnClick() {
-        panels.transform.position = Vector3.Slerp(startPoint, endPoint, fracComplete);       
+        panels.transform.position = Vector3.Slerp(startPoint, endPoint, fracComplete);     
         snow.SetActive(false);
         audioSource.Stop();
     }    
@@ -37,11 +37,8 @@ public class SceneLoader : MonoBehaviour {
     }  
 
     public void clearSamplesOnClick() {
-        GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().chopTime.Clear();
-        GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().song.Clear();
-        GameObject.Find ("ChopCount").GetComponent<Text>().text = "0";
-        GameObject.Find ("ChopCount").GetComponent<Text>().color = Color.white;        
-        Debug.Log("Samples clear!");               
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);              
     }      
 
     public void stopCoroutineOnClick() {

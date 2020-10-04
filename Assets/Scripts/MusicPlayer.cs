@@ -16,8 +16,10 @@ public class MusicPlayer : MonoBehaviour
     public List<AudioClip> clips = new List<AudioClip>();
     public List<float> chopTime = new List<float>();
     public List<AudioClip> song = new List<AudioClip>();
+
+    public AudioClip scratch;
     
-    [SerializeField] [HideInInspector] private int currentIndex = 0;
+    [SerializeField] [HideInInspector] public int currentIndex = 0;
     
     private FileInfo[] soundFiles;
     private List<string> validExtensions = new List<string> { ".ogg", ".wav" }; // Don't forget the "." i.e. "ogg" won't work - cause Path.GetExtension(filePath) will return .ext, not just ext.
@@ -32,6 +34,8 @@ public class MusicPlayer : MonoBehaviour
 
     public AudioSource audioSource;
     public Slider slider;
+
+    public int i;
 
     private static string GetAndroidExternalFilesDir()
     {
@@ -125,17 +129,18 @@ public class MusicPlayer : MonoBehaviour
     void chopTaskOnClick() {
         chopTime.Add(audioSource.time);
         song.Add(clips[currentIndex]);
-        GameObject.Find ("ChopCount").GetComponent<Text>().text = chopTime.Count.ToString();
+        GameObject.Find("ChopCount").GetComponent<Text>().text = chopTime.Count.ToString();
         if (chopTime.Count > 16) {
-            GameObject.Find ("ChopCount").GetComponent<Text>().color = Color.red;
-        }    
+            GameObject.Find("ChopCount").GetComponent<Text>().color = Color.red;
+        }  
     }  
 
-    void clearTaskOnClick() {
-        GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().chopTime.Clear();
-        GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().song.Clear();  
-        GameObject.Find ("ChopCount").GetComponent<Text>().text = "0";
-        GameObject.Find ("ChopCount").GetComponent<Text>().color = Color.white;
+    void clearTaskOnClick() {        
+        GameObject.Find("ChopCount").GetComponent<Text>().text = "0";
+        GameObject.Find("ChopCount").GetComponent<Text>().color = Color.white; 
+        // GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().chopTime.Clear();
+        // GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().song.Clear();       
+        StopCurrent();
     }      
     
     void Seek(SeekDirection d)
@@ -154,13 +159,20 @@ public class MusicPlayer : MonoBehaviour
         source.Play();
         GameObject.Find ("FileName").GetComponent<Text>().text = source.clip.name.ToString();
     }
+
+    void StopCurrent()
+    {
+        source.clip = clips[currentIndex];
+        source.Stop();
+        GameObject.Find ("FileName").GetComponent<Text>().text = source.clip.name.ToString();
+    }    
     
     void ReloadSounds()
     {
         clips.Clear();
         // get all valid files
-        //var info = new DirectoryInfo(absolutePath);
-        var info = new DirectoryInfo(GetAndroidExternalFilesDir());
+        var info = new DirectoryInfo(absolutePath);
+        //var info = new DirectoryInfo(GetAndroidExternalFilesDir());
         soundFiles = info.GetFiles()
             .Where(f => IsValidFileType(f.Name))
             .ToArray();
