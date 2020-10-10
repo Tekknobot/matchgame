@@ -25,6 +25,11 @@ public class SceneLoader : MonoBehaviour {
         float fracComplete = (Time.time - startTime) / journeyTime;
     }
 
+    public void LoadSceneOnClick(int sceneNo)
+    {
+        SceneManager.LoadScene(sceneNo);
+    }
+
     public void LoadOperatorOnClick() {
         panels.transform.position = Vector3.Slerp(startPoint, endPoint, fracComplete);     
         snow.SetActive(false);
