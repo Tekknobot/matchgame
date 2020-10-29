@@ -5172,7 +5172,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5035296718898326383, guid: f458ab27fe47dac4e8c396b0efd60c5a,
+        type: 3}
+      propertyPath: m_MinParticleSize
+      value: 0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 5035296718898326383, guid: f458ab27fe47dac4e8c396b0efd60c5a,
+        type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 5035296718898326384, guid: f458ab27fe47dac4e8c396b0efd60c5a,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5035296718898326384, guid: f458ab27fe47dac4e8c396b0efd60c5a,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5035296718898326384, guid: f458ab27fe47dac4e8c396b0efd60c5a,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 5035296718898326384, guid: f458ab27fe47dac4e8c396b0efd60c5a,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 5035296718898326385, guid: f458ab27fe47dac4e8c396b0efd60c5a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5186,7 +5216,7 @@ PrefabInstance:
     - target: {fileID: 5035296718898326385, guid: f458ab27fe47dac4e8c396b0efd60c5a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.39
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 5035296718898326385, guid: f458ab27fe47dac4e8c396b0efd60c5a,
         type: 3}
