@@ -2274,6 +2274,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed618b1192535e74ca68ca401230d118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panels: {fileID: 0}
+  snow: {fileID: 0}
+  audioSource: {fileID: 0}
+  startPoint: {x: 0, y: 0, z: 0}
+  endPoint: {x: 0, y: 0, z: 0}
+  journeyTime: 3
 --- !u!114 &1075566607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2908,7 +2914,7 @@ PrefabInstance:
     - target: {fileID: 1311590274111620539, guid: 25c1febb9534f8c4b9dd8b34a0b1a2af,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25c1febb9534f8c4b9dd8b34a0b1a2af, type: 3}

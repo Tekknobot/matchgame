@@ -42,8 +42,9 @@ public class SceneLoader : MonoBehaviour {
     }  
 
     public void clearSamplesOnClick() {
-        Scene scene = SceneManager.GetActiveScene(); 
-        SceneManager.LoadScene(scene.name);              
+        // Scene scene = SceneManager.GetActiveScene(); 
+        // SceneManager.LoadScene(scene.name);
+        Application.Quit();              
     }      
 
     public void stopCoroutineOnClick() {
