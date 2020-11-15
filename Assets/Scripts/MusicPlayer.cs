@@ -171,8 +171,8 @@ public class MusicPlayer : MonoBehaviour
     {
         clips.Clear();
         // get all valid files
-        var info = new DirectoryInfo(absolutePath);
-        //var info = new DirectoryInfo(GetAndroidExternalFilesDir());
+        //var info = new DirectoryInfo(absolutePath);
+        var info = new DirectoryInfo(GetAndroidExternalFilesDir());
         soundFiles = info.GetFiles()
             .Where(f => IsValidFileType(f.Name))
             .ToArray();
