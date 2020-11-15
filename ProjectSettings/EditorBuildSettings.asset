@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/hello.unity
+    path: Assets/Scenes/gum.unity
     guid: 263263b8b1ac85247a402ba78b38a981
   m_configObjects: {}
