@@ -155,8 +155,9 @@ public class OperatorTile : MonoBehaviour {
 		StartCoroutine(TriggerWave());
     }
 
-	void FixedUpdate() {
+	void Update() {
 		ms = 60 / bpm / 4;
+		
 		if (GameObject.Find ("Slider")) {
 			bpm = GameObject.Find ("Slider").GetComponent<Slider>().value;
 		}
