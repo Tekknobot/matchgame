@@ -21,6 +21,18 @@ public class MatchWidth : MonoBehaviour {
 
         float desiredHalfHeight = 0.5f * unitsPerPixel * Screen.height;
 
-        GetComponent<Camera>().orthographicSize = desiredHalfHeight;
+        //GetComponent<Camera>().orthographicSize = desiredHalfHeight;
+
+        //9:19 aspect ratio
+        if (Camera.main.aspect >= 0.4736) 
+            Camera.main.orthographicSize = 9.221814f;
+
+        // 10:16 aspect ratio
+        else if (Camera.main.aspect >= 0.62)
+            Camera.main.orthographicSize = 7.1f; 
+
+        // 9:16 aspect ratio
+        else if (Camera.main.aspect >= 0.5625)
+            Camera.main.orthographicSize = 9.333333f;                   
     }
 }
