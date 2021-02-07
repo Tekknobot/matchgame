@@ -11,7 +11,7 @@ public class OperatorTile : MonoBehaviour {
 
 	private Vector2[] adjacentDirections = new Vector2[] { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
 
-	private SpriteRenderer render;
+	public SpriteRenderer render;
 	public GameObject whiteParticles;
 
 	private bool isSelected = false;
@@ -230,6 +230,39 @@ public class OperatorTile : MonoBehaviour {
 			audioSource.Play();
 			render.color = selectedColor;
 		}
+
+		//Notes
+		if (render.sprite.name == "C 0") {
+			render.color = selectedColor;					
+		}
+
+		if (render.sprite.name == "D 0") {
+			render.color = selectedColor;					
+		}
+
+		if (render.sprite.name == "E 0") {
+			render.color = selectedColor;					
+		}
+
+		if (render.sprite.name == "F 0") {
+			render.color = selectedColor;					
+		}
+
+		if (render.sprite.name == "G 0") {
+			render.color = selectedColor;					
+		}
+
+		if (render.sprite.name == "A 0") {
+			render.color = selectedColor;					
+		}
+
+		if (render.sprite.name == "B 0") {
+			render.color = selectedColor;					
+		}	
+
+		if (render.sprite.name == "C 1 0") {
+			render.color = selectedColor;					
+		}									
 
 		//Chops
 		if (render.sprite.name == "sample 0" && player.chopTime.Count > 16) {
@@ -618,6 +651,8 @@ public class OperatorTile : MonoBehaviour {
 				Instantiate(whiteParticles, transform.position, Quaternion.identity);
 			}
 		}
+
+		////
 
 		////
 

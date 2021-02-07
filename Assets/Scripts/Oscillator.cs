@@ -8,13 +8,26 @@ public class Oscillator : MonoBehaviour {
     private double phase;
     private double sampling_frequency = 48000.0;
     
-    public float gain;
+    public float gain = 0.1f;
     public float volume = 0.1f;
 
     public float[] frequencies;
     public int thisfreq;
 
+    private static Color selectedColor = new Color(.5f, .5f, .5f, 1.0f);
+
+    public GameObject note_C;
+    public GameObject note_D;
+    public GameObject note_E;
+    public GameObject note_F;
+    public GameObject note_G;
+    public GameObject note_A;
+    public GameObject note_B;
+    public GameObject note_C1;
+
     void Start() {
+        gain = 0;
+        
         frequencies = new float[8];
         frequencies[0] = 440;
         frequencies[1] = 494;
@@ -24,18 +37,19 @@ public class Oscillator : MonoBehaviour {
         frequencies[5] = 740;
         frequencies[6] = 831;
         frequencies[7] = 880;
+
+        note_C = GameObject.Find("Note 1");
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (note_C.GetComponent<OperatorTile>().render.sprite.name == "C 0" && note_C.GetComponent<OperatorTile>().render.color == selectedColor) {
             gain = volume;
-            sampling_frequency = frequencies[thisfreq];
-            thisfreq += 1;
+            frequency = frequencies[0];
             thisfreq = thisfreq % frequencies.Length;
-        }
-        if (Input.GetKeyUp(KeyCode.Space)) {
+        }  
+        else {
             gain = 0;
-        }        
+        }     
     }
 
     void OnAudioFilterRead(float[] data, int channels) {
