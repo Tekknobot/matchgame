@@ -172,7 +172,8 @@ public class OperatorTile : MonoBehaviour {
 		
 		StartCoroutine(TriggerWave());
 
-		SynthSource = GameObject.Find("Synth");		
+		SynthSource = GameObject.Find("Synth");	
+			
     }
 
 	void Update() {
@@ -1645,7 +1646,7 @@ public class OperatorTile : MonoBehaviour {
 
 						if (noteTiles[1,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[1][x, y] == true) {
                             SynthSource.GetComponent<Oscillator>().gain = SynthSource.GetComponent<Oscillator>().volume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[0];
+							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[1];
 							SynthSource.GetComponent<Oscillator>().thisfreq = SynthSource.GetComponent<Oscillator>().thisfreq % SynthSource.GetComponent<Oscillator>().frequencies.Length;	
 							noteTiles[1,0].color = selectedColor;
 						}
