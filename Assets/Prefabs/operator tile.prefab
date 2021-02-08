@@ -132,7 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffdc6c17eff38fb4888c3f879b0a2f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  render: {fileID: 0}
   whiteParticles: {fileID: 165192, guid: 13d1230e68dc2464ebcf7cbc4746b129, type: 3}
+  isSelected: 0
   clickedPad: {fileID: 0}
   block: {fileID: 21300000, guid: 84ab6e21bcd1fb44fb85f157f8c9610f, type: 3}
   blue: {fileID: 21300000, guid: 05b4c4f961814a142bdc050bbc7e309d, type: 3}
@@ -143,6 +145,14 @@ MonoBehaviour:
   red: {fileID: 21300000, guid: 8894fa8f4561292488d7e1bc4f97fc74, type: 3}
   turquoise: {fileID: 21300000, guid: ed2dba5f653561c4eb18222e13b8a15b, type: 3}
   yellow: {fileID: 21300000, guid: 6865b0718d49b64459cc10b1e958c0f4, type: 3}
+  C: {fileID: 2753522478544002166, guid: bcc2b0e3f4dab4943a2085978de1e38d, type: 3}
+  D: {fileID: 2078034977453555823, guid: 581f7f87200d43c4dbac27886408cf07, type: 3}
+  E: {fileID: 2989322161779652675, guid: 2184db278ef4244489695364674c0aaa, type: 3}
+  F: {fileID: -4358683477495498672, guid: 13a417f99b7201743938173f3105f356, type: 3}
+  G: {fileID: -598237459910860632, guid: e30d8a5a852fd29468be81946376bd59, type: 3}
+  A: {fileID: 4302886462008916363, guid: 68b68bcfaa151e14cafa11c0a2871b9e, type: 3}
+  B: {fileID: -7195733894449883270, guid: 8b51067bdf80a2d4e8843d69ea9be1de, type: 3}
+  C1: {fileID: -4439320367187748464, guid: e2d2b11b1b4dccd43ad975e3b614ef03, type: 3}
   sample0: {fileID: -8363607444970788078, guid: 7384ac96c02561f42913a9cce0a25bd6,
     type: 3}
   sample1: {fileID: 3601817584302600694, guid: 7384ac96c02561f42913a9cce0a25bd6, type: 3}
@@ -208,6 +218,8 @@ MonoBehaviour:
   chopSource: {fileID: -3554584574793152228}
   bpm: 0
   ms: 0
+  SynthSource: {fileID: 2176426943351445459, guid: 833d092ed3bc83940a7f25c87fb502b3,
+    type: 3}
 --- !u!82 &-3731806925748220179
 AudioSource:
   m_ObjectHideFlags: 0

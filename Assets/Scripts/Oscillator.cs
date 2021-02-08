@@ -16,15 +16,6 @@ public class Oscillator : MonoBehaviour {
 
     private static Color selectedColor = new Color(.5f, .5f, .5f, 1.0f);
 
-    public GameObject note_C;
-    public GameObject note_D;
-    public GameObject note_E;
-    public GameObject note_F;
-    public GameObject note_G;
-    public GameObject note_A;
-    public GameObject note_B;
-    public GameObject note_C1;
-
     void Start() {
         gain = 0;
         
@@ -38,18 +29,6 @@ public class Oscillator : MonoBehaviour {
         frequencies[6] = 831;
         frequencies[7] = 880;
 
-        note_C = GameObject.Find("Note 1");
-    }
-
-    void Update() {
-        if (note_C.GetComponent<OperatorTile>().render.sprite.name == "C 0" && note_C.GetComponent<OperatorTile>().render.color == selectedColor) {
-            gain = volume;
-            frequency = frequencies[0];
-            thisfreq = thisfreq % frequencies.Length;
-        }  
-        else {
-            gain = 0;
-        }     
     }
 
     void OnAudioFilterRead(float[] data, int channels) {

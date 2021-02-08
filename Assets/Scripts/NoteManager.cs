@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class NoteManager : MonoBehaviour {
-	public static PadManager instance;
+	public static NoteManager instance;
 	public List<Sprite> pad = new List<Sprite>();
 	public GameObject tile;
 	public int xSize, ySize;
@@ -16,7 +16,7 @@ public class NoteManager : MonoBehaviour {
 	int i = 1;
 
 	void Start () {
-		instance = GetComponent<PadManager>();
+		instance = GetComponent<NoteManager>();
 
 		Vector2 offset = tile.GetComponent<SpriteRenderer>().bounds.size;
         CreateBoard(offset.x, offset.y); 

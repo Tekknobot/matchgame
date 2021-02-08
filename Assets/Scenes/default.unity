@@ -9199,7 +9199,7 @@ GameObject:
   - component: {fileID: 1990412428}
   - component: {fileID: 1990412427}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Synth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

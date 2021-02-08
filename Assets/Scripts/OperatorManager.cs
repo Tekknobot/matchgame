@@ -14,6 +14,8 @@ public class OperatorManager : MonoBehaviour {
 	public bool[][,] boards = new bool[8][,];
 	public bool[][,] chops = new bool[1][,];
 	public string[][,] pad = new string[1][,];
+	public bool[][,] note = new bool[8][,];
+	public string[][,] notePads = new string[1][,];
 
 	public bool IsShifting { get; set; }
 
@@ -55,5 +57,13 @@ public class OperatorManager : MonoBehaviour {
 		for (int x = 0; x < pad.Length; x++) { 
 			pad[x] = new string[xSize,ySize];
 		}
+
+		for (int x = 0; x < note.Length; x++) { 
+			note[x] = new bool[xSize,ySize];
+		}	
+
+		for (int x = 0; x < notePads.Length; x++) { 
+			notePads[x] = new string[xSize,ySize];
+		}			
 	}
 }
