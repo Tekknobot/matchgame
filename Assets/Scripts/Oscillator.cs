@@ -17,17 +17,17 @@ public class Oscillator : MonoBehaviour {
     private static Color selectedColor = new Color(.5f, .5f, .5f, 1.0f);
 
     void Start() {
-        gain = 0;
+        //gain = 0;
         
         frequencies = new float[8];
-        frequencies[0] = 440;
-        frequencies[1] = 494;
-        frequencies[2] = 554;
-        frequencies[3] = 587;
-        frequencies[4] = 659;                        
-        frequencies[5] = 740;
-        frequencies[6] = 831;
-        frequencies[7] = 880;
+        frequencies[0] = 131;
+        frequencies[1] = 147;
+        frequencies[2] = 165;
+        frequencies[3] = 175;
+        frequencies[4] = 196;                        
+        frequencies[5] = 220;
+        frequencies[6] = 247;
+        frequencies[7] = 262;
 
     }
 

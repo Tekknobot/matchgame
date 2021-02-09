@@ -104,6 +104,7 @@ public class OperatorTile : MonoBehaviour {
 	private MusicPlayer player;
 
 	public GameObject SynthSource;
+	public GameObject SynthSourcePad;
 
 	Dictionary<string, int> spriteClip = new Dictionary<string, int>() {
 		{ "blue 0", 0 },
@@ -174,6 +175,7 @@ public class OperatorTile : MonoBehaviour {
 		StartCoroutine(TriggerWave());
 
 		SynthSource = GameObject.Find("Synth");	
+		SynthSourcePad = GameObject.Find("Synth2");	
 			
     }
 
@@ -388,58 +390,66 @@ public class OperatorTile : MonoBehaviour {
 		// Notes
 		if (render.sprite.name == "C 0") {
 			render.color = selectedColor;	
-			SynthSource.GetComponent<Oscillator>().gain = SynthSource.GetComponent<Oscillator>().volume;
-			SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[0];
-			SynthSource.GetComponent<Oscillator>().thisfreq = SynthSource.GetComponent<Oscillator>().thisfreq % SynthSource.GetComponent<Oscillator>().frequencies.Length;						
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[0];
+			SynthSourcePad.GetComponent<Oscillator>().thisfreq = SynthSourcePad.GetComponent<Oscillator>().thisfreq % SynthSourcePad.GetComponent<Oscillator>().frequencies.Length;
+			StartCoroutine(StopNote());						
 		}
 
 		if (render.sprite.name == "D 0") {
 			render.color = selectedColor;	
-			SynthSource.GetComponent<Oscillator>().gain = SynthSource.GetComponent<Oscillator>().volume;
-			SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[1];
-			SynthSource.GetComponent<Oscillator>().thisfreq = SynthSource.GetComponent<Oscillator>().thisfreq % SynthSource.GetComponent<Oscillator>().frequencies.Length;					
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[1];
+			SynthSourcePad.GetComponent<Oscillator>().thisfreq = SynthSourcePad.GetComponent<Oscillator>().thisfreq % SynthSourcePad.GetComponent<Oscillator>().frequencies.Length;					
+			StartCoroutine(StopNote());
 		}
 
 		if (render.sprite.name == "E 0") {
 			render.color = selectedColor;	
-			SynthSource.GetComponent<Oscillator>().gain = SynthSource.GetComponent<Oscillator>().volume;
-			SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[2];
-			SynthSource.GetComponent<Oscillator>().thisfreq = SynthSource.GetComponent<Oscillator>().thisfreq % SynthSource.GetComponent<Oscillator>().frequencies.Length;				
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[2];
+			SynthSourcePad.GetComponent<Oscillator>().thisfreq = SynthSourcePad.GetComponent<Oscillator>().thisfreq % SynthSourcePad.GetComponent<Oscillator>().frequencies.Length;				
+			StartCoroutine(StopNote());
 		}
 
 		if (render.sprite.name == "F 0") {
 			render.color = selectedColor;	
-			SynthSource.GetComponent<Oscillator>().gain = SynthSource.GetComponent<Oscillator>().volume;
-			SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[3];
-			SynthSource.GetComponent<Oscillator>().thisfreq = SynthSource.GetComponent<Oscillator>().thisfreq % SynthSource.GetComponent<Oscillator>().frequencies.Length;					
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[3];
+			SynthSourcePad.GetComponent<Oscillator>().thisfreq = SynthSourcePad.GetComponent<Oscillator>().thisfreq % SynthSourcePad.GetComponent<Oscillator>().frequencies.Length;					
+			StartCoroutine(StopNote());
 		}
 
 		if (render.sprite.name == "G 0") {
 			render.color = selectedColor;	
-			SynthSource.GetComponent<Oscillator>().gain = SynthSource.GetComponent<Oscillator>().volume;
-			SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[4];
-			SynthSource.GetComponent<Oscillator>().thisfreq = SynthSource.GetComponent<Oscillator>().thisfreq % SynthSource.GetComponent<Oscillator>().frequencies.Length;					
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[4];
+			SynthSourcePad.GetComponent<Oscillator>().thisfreq = SynthSourcePad.GetComponent<Oscillator>().thisfreq % SynthSourcePad.GetComponent<Oscillator>().frequencies.Length;					
+			StartCoroutine(StopNote());
 		}
 
 		if (render.sprite.name == "A 0") {
 			render.color = selectedColor;	
-			SynthSource.GetComponent<Oscillator>().gain = SynthSource.GetComponent<Oscillator>().volume;
-			SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[5];
-			SynthSource.GetComponent<Oscillator>().thisfreq = SynthSource.GetComponent<Oscillator>().thisfreq % SynthSource.GetComponent<Oscillator>().frequencies.Length;					
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[5];
+			SynthSourcePad.GetComponent<Oscillator>().thisfreq = SynthSourcePad.GetComponent<Oscillator>().thisfreq % SynthSourcePad.GetComponent<Oscillator>().frequencies.Length;					
+			StartCoroutine(StopNote());
 		}
 
 		if (render.sprite.name == "B 0") {
 			render.color = selectedColor;	
-			SynthSource.GetComponent<Oscillator>().gain = SynthSource.GetComponent<Oscillator>().volume;
-			SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[6];
-			SynthSource.GetComponent<Oscillator>().thisfreq = SynthSource.GetComponent<Oscillator>().thisfreq % SynthSource.GetComponent<Oscillator>().frequencies.Length;					
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[6];
+			SynthSourcePad.GetComponent<Oscillator>().thisfreq = SynthSourcePad.GetComponent<Oscillator>().thisfreq % SynthSourcePad.GetComponent<Oscillator>().frequencies.Length;					
+			StartCoroutine(StopNote());
 		}	
 
 		if (render.sprite.name == "C 1 0") {
 			render.color = selectedColor;	
-			SynthSource.GetComponent<Oscillator>().gain = SynthSource.GetComponent<Oscillator>().volume;
-			SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[7];
-			SynthSource.GetComponent<Oscillator>().thisfreq = SynthSource.GetComponent<Oscillator>().thisfreq % SynthSource.GetComponent<Oscillator>().frequencies.Length;					
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[7];
+			SynthSourcePad.GetComponent<Oscillator>().thisfreq = SynthSourcePad.GetComponent<Oscillator>().thisfreq % SynthSourcePad.GetComponent<Oscillator>().frequencies.Length;					
+			StartCoroutine(StopNote());
 		}
 
 		mainCamera.GetComponent<CameraShake>().shakecamera();
@@ -1295,7 +1305,7 @@ public class OperatorTile : MonoBehaviour {
 			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
 				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
 				OperatorManager.instance.note[0][jFound,kFound] = true;
-				OperatorManager.instance.notePads[0][jFound,kFound] = "Note 1";
+				OperatorManager.instance.notePads[0][jFound,kFound] = "C 0";
 				previousSelected.GetComponent<OperatorTile>().Deselect();
 				Select();
 			}
@@ -1305,7 +1315,7 @@ public class OperatorTile : MonoBehaviour {
 			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
 				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
 				OperatorManager.instance.note[1][jFound,kFound] = true;
-				OperatorManager.instance.notePads[0][jFound,kFound] = "Note 2";
+				OperatorManager.instance.notePads[0][jFound,kFound] = "D 0";
 				previousSelected.GetComponent<OperatorTile>().Deselect();
 				Select();
 			}
@@ -1315,7 +1325,7 @@ public class OperatorTile : MonoBehaviour {
 			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
 				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
 				OperatorManager.instance.note[2][jFound,kFound] = true;
-				OperatorManager.instance.notePads[0][jFound,kFound] = "Note 3";
+				OperatorManager.instance.notePads[0][jFound,kFound] = "E 0";
 				previousSelected.GetComponent<OperatorTile>().Deselect();
 				Select();
 			}
@@ -1325,7 +1335,7 @@ public class OperatorTile : MonoBehaviour {
 			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
 				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
 				OperatorManager.instance.note[3][jFound,kFound] = true;
-				OperatorManager.instance.notePads[0][jFound,kFound] = "Note 4";
+				OperatorManager.instance.notePads[0][jFound,kFound] = "F 0";
 				previousSelected.GetComponent<OperatorTile>().Deselect();
 				Select();
 			}
@@ -1335,7 +1345,7 @@ public class OperatorTile : MonoBehaviour {
 			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
 				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
 				OperatorManager.instance.note[4][jFound,kFound] = true;
-				OperatorManager.instance.notePads[0][jFound,kFound] = "Note 5";
+				OperatorManager.instance.notePads[0][jFound,kFound] = "G 0";
 				previousSelected.GetComponent<OperatorTile>().Deselect();
 				Select();
 			}
@@ -1345,7 +1355,7 @@ public class OperatorTile : MonoBehaviour {
 			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
 				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
 				OperatorManager.instance.note[5][jFound,kFound] = true;
-				OperatorManager.instance.notePads[0][jFound,kFound] = "Note 6";
+				OperatorManager.instance.notePads[0][jFound,kFound] = "A 0";
 				previousSelected.GetComponent<OperatorTile>().Deselect();
 				Select();
 			}
@@ -1355,7 +1365,7 @@ public class OperatorTile : MonoBehaviour {
 			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
 				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
 				OperatorManager.instance.note[6][jFound,kFound] = true;
-				OperatorManager.instance.notePads[0][jFound,kFound] = "Note 7";
+				OperatorManager.instance.notePads[0][jFound,kFound] = "B 0";
 				previousSelected.GetComponent<OperatorTile>().Deselect();
 				Select();
 			}
@@ -1365,7 +1375,7 @@ public class OperatorTile : MonoBehaviour {
 			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
 				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
 				OperatorManager.instance.note[7][jFound,kFound] = true;
-				OperatorManager.instance.notePads[0][jFound,kFound] = "Note 8";
+				OperatorManager.instance.notePads[0][jFound,kFound] = "C 1 0";
 				previousSelected.GetComponent<OperatorTile>().Deselect();
 				Select();
 			}
@@ -1658,7 +1668,7 @@ public class OperatorTile : MonoBehaviour {
 						}
 						else if (noteTiles[1,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[0][x, y] == false) {
 							noteTiles[1,0].color = Color.white;
-							SynthSource.GetComponent<Oscillator>().gain = 0;
+							//SynthSource.GetComponent<Oscillator>().gain = 0;
 						}			
 
 						if (noteTiles[2,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[2][x, y] == true) {
@@ -1669,7 +1679,7 @@ public class OperatorTile : MonoBehaviour {
 						}
 						else if (noteTiles[2,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[0][x, y] == false) {
 							noteTiles[2,0].color = Color.white;
-							SynthSource.GetComponent<Oscillator>().gain = 0;
+							//SynthSource.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[3,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[3][x, y] == true) {
@@ -1680,7 +1690,7 @@ public class OperatorTile : MonoBehaviour {
 						}
 						else if (noteTiles[3,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[0][x, y] == false) {
 							noteTiles[3,0].color = Color.white;
-							SynthSource.GetComponent<Oscillator>().gain = 0;
+							//SynthSource.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[4,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[4][x, y] == true) {
@@ -1691,7 +1701,7 @@ public class OperatorTile : MonoBehaviour {
 						}
 						else if (noteTiles[4,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[0][x, y] == false) {
 							noteTiles[4,0].color = Color.white;
-							SynthSource.GetComponent<Oscillator>().gain = 0;
+							//SynthSource.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[5,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[5][x, y] == true) {
@@ -1702,7 +1712,7 @@ public class OperatorTile : MonoBehaviour {
 						}
 						else if (noteTiles[5,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[0][x, y] == false) {
 							noteTiles[5,0].color = Color.white;
-							SynthSource.GetComponent<Oscillator>().gain = 0;
+							//SynthSource.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[6,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[6][x, y] == true) {
@@ -1713,7 +1723,7 @@ public class OperatorTile : MonoBehaviour {
 						}
 						else if (noteTiles[6,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[0][x, y] == false) {
 							noteTiles[6,0].color = Color.white;
-							SynthSource.GetComponent<Oscillator>().gain = 0;
+							//SynthSource.GetComponent<Oscillator>().gain = 0;
 						}
 
 						if (noteTiles[7,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[7][x, y] == true) {
@@ -1724,7 +1734,7 @@ public class OperatorTile : MonoBehaviour {
 						}
 						else if (noteTiles[7,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[0][x, y] == false) {
 							noteTiles[7,0].color = Color.white;
-							SynthSource.GetComponent<Oscillator>().gain = 0;
+							//SynthSource.GetComponent<Oscillator>().gain = 0;
 						}																																						
 
 						yield return StartCoroutine(Delay());
@@ -1765,5 +1775,10 @@ public class OperatorTile : MonoBehaviour {
 	IEnumerator resetflipTile() {
 		yield return new WaitForSeconds(1f);
 		GetComponent<RotateYaxis>().resetflipTile();
-	}
+	}	
+
+	IEnumerator StopNote() {
+		yield return new WaitForSeconds(1f);
+		SynthSourcePad.GetComponent<Oscillator>().gain = 0;
+	}		
 }
