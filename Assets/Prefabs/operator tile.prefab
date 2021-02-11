@@ -145,14 +145,25 @@ MonoBehaviour:
   red: {fileID: 21300000, guid: 8894fa8f4561292488d7e1bc4f97fc74, type: 3}
   turquoise: {fileID: 21300000, guid: ed2dba5f653561c4eb18222e13b8a15b, type: 3}
   yellow: {fileID: 21300000, guid: 6865b0718d49b64459cc10b1e958c0f4, type: 3}
-  C: {fileID: 2753522478544002166, guid: bcc2b0e3f4dab4943a2085978de1e38d, type: 3}
-  D: {fileID: 2078034977453555823, guid: 581f7f87200d43c4dbac27886408cf07, type: 3}
-  E: {fileID: 2989322161779652675, guid: 2184db278ef4244489695364674c0aaa, type: 3}
-  F: {fileID: -4358683477495498672, guid: 13a417f99b7201743938173f3105f356, type: 3}
-  G: {fileID: -598237459910860632, guid: e30d8a5a852fd29468be81946376bd59, type: 3}
-  A: {fileID: 4302886462008916363, guid: 68b68bcfaa151e14cafa11c0a2871b9e, type: 3}
-  B: {fileID: -7195733894449883270, guid: 8b51067bdf80a2d4e8843d69ea9be1de, type: 3}
-  C1: {fileID: -4439320367187748464, guid: e2d2b11b1b4dccd43ad975e3b614ef03, type: 3}
+  Note_0: {fileID: -7785248041122276235, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_1: {fileID: -3526891780904087510, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_2: {fileID: -4733014446013148258, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_3: {fileID: 3864745769807113020, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_4: {fileID: -4752886026484238904, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_5: {fileID: -8756933345286439814, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_6: {fileID: 2750484922391956990, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_7: {fileID: 6668798790196022381, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_8: {fileID: -8909885007239981102, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_9: {fileID: -8463608554602471812, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_10: {fileID: 6986962164611519671, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_11: {fileID: -7185486173842109806, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
+    type: 3}
+  Note_12: {fileID: -3347351200968417722, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
+    type: 3}
+  Note_13: {fileID: -7525732403832576540, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
+    type: 3}
+  Note_14: {fileID: 2303902167486592619, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_15: {fileID: 1506224746197862239, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
   sample0: {fileID: -8363607444970788078, guid: 7384ac96c02561f42913a9cce0a25bd6,
     type: 3}
   sample1: {fileID: 3601817584302600694, guid: 7384ac96c02561f42913a9cce0a25bd6, type: 3}
@@ -220,6 +231,7 @@ MonoBehaviour:
   ms: 0
   SynthSource: {fileID: 2176426943351445459, guid: 833d092ed3bc83940a7f25c87fb502b3,
     type: 3}
+  SynthSourcePad: {fileID: 0}
 --- !u!82 &-3731806925748220179
 AudioSource:
   m_ObjectHideFlags: 0

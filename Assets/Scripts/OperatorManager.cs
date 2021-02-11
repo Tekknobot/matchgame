@@ -14,7 +14,7 @@ public class OperatorManager : MonoBehaviour {
 	public bool[][,] boards = new bool[8][,];
 	public bool[][,] chops = new bool[1][,];
 	public string[][,] pad = new string[1][,];
-	public bool[][,] note = new bool[8][,];
+	public bool[][,] note = new bool[16][,];
 	public string[][,] notePads = new string[1][,];
 
 	public bool IsShifting { get; set; }
