@@ -20,22 +20,22 @@ public class Oscillator : MonoBehaviour {
         //gain = 0;
         
         frequencies = new float[16];
-        frequencies[0] = 110.00f;
-        frequencies[1] = 123.47f;
-        frequencies[2] = 138.59f;
-        frequencies[3] = 146.83f;
-        frequencies[4] = 155.56f;                        
-        frequencies[5] = 185.00f;
-        frequencies[6] = 207.65f;
-        frequencies[7] = 220.00f;
-        frequencies[8] = 246.94f;
-        frequencies[9] = 277.18f;
-        frequencies[10] = 293.66f;
-        frequencies[11] = 329.63f;
-        frequencies[12] = 369.99f;                        
-        frequencies[13] = 415.30f;
-        frequencies[14] = 440.00f;
-        frequencies[15] = 493.88f;        
+        frequencies[0] = 130.81f;
+        frequencies[1] = 138.59f;
+        frequencies[2] = 146.83f;
+        frequencies[3] = 155.56f;
+        frequencies[4] = 164.81f;                        
+        frequencies[5] = 174.61f;
+        frequencies[6] = 185.00f;
+        frequencies[7] = 196.00f;
+        frequencies[8] = 207.65f;
+        frequencies[9] = 220.00f;
+        frequencies[10] = 233.08f;
+        frequencies[11] = 246.94f;
+        frequencies[12] = 261.63f;                        
+        frequencies[13] = 277.18f;
+        frequencies[14] = 293.66f;
+        frequencies[15] = 311.13f;        
 
     }
 
