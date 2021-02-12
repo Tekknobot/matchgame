@@ -12,31 +12,29 @@ public class Oscillator : MonoBehaviour {
     public float volume = 0.1f;
 
     public float[] frequencies;
-    public int thisfreq;
 
     private static Color selectedColor = new Color(.5f, .5f, .5f, 1.0f);
 
     void Start() {
-        //gain = 0;
+        gain = 0;
         
         frequencies = new float[16];
-        frequencies[0] = 130.81f;
-        frequencies[1] = 138.59f;
-        frequencies[2] = 146.83f;
-        frequencies[3] = 155.56f;
-        frequencies[4] = 164.81f;                        
-        frequencies[5] = 174.61f;
-        frequencies[6] = 185.00f;
-        frequencies[7] = 196.00f;
-        frequencies[8] = 207.65f;
-        frequencies[9] = 220.00f;
-        frequencies[10] = 233.08f;
-        frequencies[11] = 246.94f;
-        frequencies[12] = 261.63f;                        
-        frequencies[13] = 277.18f;
-        frequencies[14] = 293.66f;
-        frequencies[15] = 311.13f;        
-
+        frequencies[0] = 261.63f;   // C4
+        frequencies[1] = 277.18f;   // C#4
+        frequencies[2] = 293.66f;   // D4 
+        frequencies[3] = 311.13f;   // D#4
+        frequencies[4] = 329.63f;   // E4                      
+        frequencies[5] = 349.23f;   // F4
+        frequencies[6] = 369.99f;   // F#4
+        frequencies[7] = 392.00f;   // G4
+        frequencies[8] = 415.30f;   // G#4
+        frequencies[9] = 440.00f;   // A4
+        frequencies[10] = 466.16f;  // A#4
+        frequencies[11] = 493.88f;  // B4
+        frequencies[12] = 523.25f;  // C5                        
+        frequencies[13] = 554.37f;  // C#5
+        frequencies[14] = 587.33f;  // D5
+        frequencies[15] = 622.25f;  // D#5      
     }
 
     void OnAudioFilterRead(float[] data, int channels) {
