@@ -111,7 +111,23 @@ public class OperatorTile : MonoBehaviour {
 
 	private MusicPlayer player;
 
-	public GameObject SynthSource;
+	public GameObject SynthSource_0;
+	public GameObject SynthSource_1;
+	public GameObject SynthSource_2;
+	public GameObject SynthSource_3;
+	public GameObject SynthSource_4;
+	public GameObject SynthSource_5;
+	public GameObject SynthSource_6;
+	public GameObject SynthSource_7;
+	public GameObject SynthSource_8;
+	public GameObject SynthSource_9;
+	public GameObject SynthSource_10;
+	public GameObject SynthSource_11;
+	public GameObject SynthSource_12;
+	public GameObject SynthSource_13;
+	public GameObject SynthSource_14;
+	public GameObject SynthSource_15;
+
 	public GameObject SynthSourcePad;
 
 	Dictionary<string, int> spriteClip = new Dictionary<string, int>() {
@@ -182,8 +198,24 @@ public class OperatorTile : MonoBehaviour {
 		
 		StartCoroutine(TriggerWave());
 
-		SynthSource = GameObject.Find("Synth");	
-		SynthSourcePad = GameObject.Find("Synth2");	
+		SynthSource_0 = GameObject.Find("C4");
+		SynthSource_1 = GameObject.Find("C#4");
+		SynthSource_2 = GameObject.Find("D4");
+		SynthSource_3 = GameObject.Find("D#4");
+		SynthSource_4 = GameObject.Find("E4");	
+		SynthSource_5 = GameObject.Find("F4");
+		SynthSource_6 = GameObject.Find("F#4");
+		SynthSource_7 = GameObject.Find("G4");
+		SynthSource_8 = GameObject.Find("G#4");
+		SynthSource_9 = GameObject.Find("A4");
+		SynthSource_10 = GameObject.Find("A#4");
+		SynthSource_11 = GameObject.Find("B4");
+		SynthSource_12 = GameObject.Find("C5");
+		SynthSource_13 = GameObject.Find("C#5");
+		SynthSource_14 = GameObject.Find("D5");
+		SynthSource_15 = GameObject.Find("D#5");
+
+		SynthSourcePad = GameObject.Find("SynthPads");	
 			
     }
 
@@ -243,9 +275,9 @@ public class OperatorTile : MonoBehaviour {
 			audioSourceChops.volume = chopsVolume;
 		}	
 
-		if (GameObject.Find ("SynthVol") && SynthSource != null) {
+		if (GameObject.Find ("SynthVol") && SynthSource_0 != null) {
 			synthVolume = GameObject.Find ("SynthVol").GetComponent<Slider>().value;
-			SynthSource.GetComponent<Oscillator>().volume = synthVolume;
+			SynthSource_0.GetComponent<Oscillator>().volume = synthVolume;
 		}			
 	}
 
@@ -1923,148 +1955,163 @@ public class OperatorTile : MonoBehaviour {
 
 						// Play synth
 						if (noteTiles[0,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[0][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[0];	
+							SynthSource_0.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_0.GetComponent<Oscillator>().frequency = SynthSource_0.GetComponent<Oscillator>().frequencies[0];	
 							noteTiles[0,0].color = selectedColor;
 						}
 						else if (noteTiles[0,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[0][x, y] == false) {
 							noteTiles[0,0].color = Color.white;
-							SynthSource.GetComponent<Oscillator>().gain = 0;
+							SynthSource_0.GetComponent<Oscillator>().gain = 0;
 						}
 
 						if (noteTiles[1,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[1][x, y] == true) {
-                            SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[1];	
+                            SynthSource_1.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_1.GetComponent<Oscillator>().frequency = SynthSource_1.GetComponent<Oscillator>().frequencies[1];	
 							noteTiles[1,0].color = selectedColor;
 						}
 						else if (noteTiles[1,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[1][x, y] == false) {
 							noteTiles[1,0].color = Color.white;
+							SynthSource_1.GetComponent<Oscillator>().gain = 0;
 						}			
 
 						if (noteTiles[2,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[2][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[2];
+							SynthSource_2.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_2.GetComponent<Oscillator>().frequency = SynthSource_2.GetComponent<Oscillator>().frequencies[2];
 							noteTiles[2,0].color = selectedColor;
 						}
 						else if (noteTiles[2,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[2][x, y] == false) {
 							noteTiles[2,0].color = Color.white;
+							SynthSource_2.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[3,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[3][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[3];	
+							SynthSource_3.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_3.GetComponent<Oscillator>().frequency = SynthSource_3.GetComponent<Oscillator>().frequencies[3];	
 							noteTiles[3,0].color = selectedColor;
 						}
 						else if (noteTiles[3,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[3][x, y] == false) {
 							noteTiles[3,0].color = Color.white;
+							SynthSource_3.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[4,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[4][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[4];	
+							SynthSource_4.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_4.GetComponent<Oscillator>().frequency = SynthSource_4.GetComponent<Oscillator>().frequencies[4];	
 							noteTiles[4,0].color = selectedColor;
 						}
 						else if (noteTiles[4,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[4][x, y] == false) {
 							noteTiles[4,0].color = Color.white;
+							SynthSource_4.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[5,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[5][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[5];
+							SynthSource_5.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_5.GetComponent<Oscillator>().frequency = SynthSource_5.GetComponent<Oscillator>().frequencies[5];
 							noteTiles[5,0].color = selectedColor;
 						}
 						else if (noteTiles[5,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[5][x, y] == false) {
 							noteTiles[5,0].color = Color.white;
+							SynthSource_5.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[6,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[6][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[6];	
+							SynthSource_6.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_6.GetComponent<Oscillator>().frequency = SynthSource_6.GetComponent<Oscillator>().frequencies[6];	
 							noteTiles[6,0].color = selectedColor;
 						}
 						else if (noteTiles[6,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[6][x, y] == false) {
 							noteTiles[6,0].color = Color.white;
+							SynthSource_6.GetComponent<Oscillator>().gain = 0;
 						}
 
 						if (noteTiles[7,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[7][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[7];	
+							SynthSource_7.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_7.GetComponent<Oscillator>().frequency = SynthSource_7.GetComponent<Oscillator>().frequencies[7];	
 							noteTiles[7,0].color = selectedColor;
 						}
 						else if (noteTiles[7,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[7][x, y] == false) {
 							noteTiles[7,0].color = Color.white;
+							SynthSource_7.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[0,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[8][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[8];	
+							SynthSource_8.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_8.GetComponent<Oscillator>().frequency = SynthSource_8.GetComponent<Oscillator>().frequencies[8];	
 							noteTiles[0,1].color = selectedColor;
 						}
 						else if (noteTiles[0,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[8][x, y] == false) {
 							noteTiles[0,1].color = Color.white;
+							SynthSource_8.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[1,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[9][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[9];	
+							SynthSource_9.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_9.GetComponent<Oscillator>().frequency = SynthSource_9.GetComponent<Oscillator>().frequencies[9];	
 							noteTiles[1,1].color = selectedColor;
 						}
 						else if (noteTiles[1,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[9][x, y] == false) {
 							noteTiles[1,1].color = Color.white;
+							SynthSource_9.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[2,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[10][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[10];	
+							SynthSource_10.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_10.GetComponent<Oscillator>().frequency = SynthSource_10.GetComponent<Oscillator>().frequencies[10];	
 							noteTiles[2,1].color = selectedColor;
 						}
 						else if (noteTiles[2,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[10][x, y] == false) {
 							noteTiles[2,1].color = Color.white;
+							SynthSource_10.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[3,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[11][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[11];	
+							SynthSource_11.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_11.GetComponent<Oscillator>().frequency = SynthSource_11.GetComponent<Oscillator>().frequencies[11];	
 							noteTiles[3,1].color = selectedColor;
 						}
 						else if (noteTiles[3,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[11][x, y] == false) {
 							noteTiles[3,1].color = Color.white;
+							SynthSource_11.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[4,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[12][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[12];	
+							SynthSource_12.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_12.GetComponent<Oscillator>().frequency = SynthSource_12.GetComponent<Oscillator>().frequencies[12];	
 							noteTiles[4,1].color = selectedColor;
 						}
 						else if (noteTiles[4,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[12][x, y] == false) {
 							noteTiles[4,1].color = Color.white;
+							SynthSource_12.GetComponent<Oscillator>().gain = 0;
 						}		
 
 						if (noteTiles[5,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[13][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[13];	
+							SynthSource_13.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_13.GetComponent<Oscillator>().frequency = SynthSource_13.GetComponent<Oscillator>().frequencies[13];	
 							noteTiles[5,1].color = selectedColor;
 						}
 						else if (noteTiles[5,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[13][x, y] == false) {
 							noteTiles[5,1].color = Color.white;
+							SynthSource_13.GetComponent<Oscillator>().gain = 0;
 						}	
 
 						if (noteTiles[6,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[14][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[14];	
+							SynthSource_14.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_14.GetComponent<Oscillator>().frequency = SynthSource_14.GetComponent<Oscillator>().frequencies[14];	
 							noteTiles[6,1].color = selectedColor;
 						}
 						else if (noteTiles[6,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[14][x, y] == false) {
 							noteTiles[6,1].color = Color.white;
+							SynthSource_14.GetComponent<Oscillator>().gain = 0;
 						}			
 
 						if (noteTiles[7,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[15][x, y] == true) {
-							SynthSource.GetComponent<Oscillator>().gain = synthVolume;
-							SynthSource.GetComponent<Oscillator>().frequency = SynthSource.GetComponent<Oscillator>().frequencies[15];	
+							SynthSource_15.GetComponent<Oscillator>().gain = synthVolume;
+							SynthSource_15.GetComponent<Oscillator>().frequency = SynthSource_15.GetComponent<Oscillator>().frequencies[15];	
 							noteTiles[7,1].color = selectedColor;
 						}
 						else if (noteTiles[7,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.note[15][x, y] == false) {
 							noteTiles[7,1].color = Color.white;
+							SynthSource_15.GetComponent<Oscillator>().gain = 0;
 						}																																										
 																																				
 						yield return StartCoroutine(Delay());
