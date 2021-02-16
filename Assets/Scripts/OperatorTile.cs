@@ -47,6 +47,40 @@ public class OperatorTile : MonoBehaviour {
 	public Sprite Note_14;
 	public Sprite Note_15;	
 
+	public Sprite Note_16;
+	public Sprite Note_17;
+	public Sprite Note_18;
+	public Sprite Note_19;
+	public Sprite Note_20;
+	public Sprite Note_21;
+	public Sprite Note_22;
+	public Sprite Note_23;
+	public Sprite Note_24;
+	public Sprite Note_25;
+	public Sprite Note_26;
+	public Sprite Note_27;
+	public Sprite Note_28;
+	public Sprite Note_29;
+	public Sprite Note_30;
+	public Sprite Note_31;
+
+	public Sprite Note_32;
+	public Sprite Note_33;
+	public Sprite Note_34;
+	public Sprite Note_35;
+	public Sprite Note_36;
+	public Sprite Note_37;
+	public Sprite Note_38;
+	public Sprite Note_39;
+	public Sprite Note_40;
+	public Sprite Note_41;
+	public Sprite Note_42;
+	public Sprite Note_43;
+	public Sprite Note_44;
+	public Sprite Note_45;
+	public Sprite Note_46;
+	public Sprite Note_47;		
+
 	public Sprite sample0;
 	public Sprite sample1;
 	public Sprite sample2;
@@ -104,6 +138,8 @@ public class OperatorTile : MonoBehaviour {
 	public SpriteRenderer[,] blockTiles;
 	public SpriteRenderer[,] padTiles;
 	public SpriteRenderer[,] noteTiles;
+	public SpriteRenderer[,] noteTilesDown;
+	public SpriteRenderer[,] noteTilesUp;
 
 	bool hasCoroutineStarted = false;
 
@@ -127,6 +163,40 @@ public class OperatorTile : MonoBehaviour {
 	public GameObject SynthSource_13;
 	public GameObject SynthSource_14;
 	public GameObject SynthSource_15;
+
+	public GameObject SynthSource_16;
+	public GameObject SynthSource_17;
+	public GameObject SynthSource_18;
+	public GameObject SynthSource_19;
+	public GameObject SynthSource_20;
+	public GameObject SynthSource_21;
+	public GameObject SynthSource_22;
+	public GameObject SynthSource_23;
+	public GameObject SynthSource_24;
+	public GameObject SynthSource_25;
+	public GameObject SynthSource_26;
+	public GameObject SynthSource_27;
+	public GameObject SynthSource_28;
+	public GameObject SynthSource_29;
+	public GameObject SynthSource_30;
+	public GameObject SynthSource_31;
+
+	public GameObject SynthSource_32;
+	public GameObject SynthSource_33;
+	public GameObject SynthSource_34;
+	public GameObject SynthSource_35;
+	public GameObject SynthSource_36;
+	public GameObject SynthSource_37;
+	public GameObject SynthSource_38;
+	public GameObject SynthSource_39;
+	public GameObject SynthSource_40;
+	public GameObject SynthSource_41;
+	public GameObject SynthSource_42;
+	public GameObject SynthSource_43;
+	public GameObject SynthSource_44;
+	public GameObject SynthSource_45;
+	public GameObject SynthSource_46;
+	public GameObject SynthSource_47;		
 
 	public GameObject SynthSourcePad;
 
@@ -194,26 +264,67 @@ public class OperatorTile : MonoBehaviour {
 			for (int x = 0; x < NoteManager.instance.xSize; x++) {
 				noteTiles[x,y] = NoteManager.instance.tiles[x, y].GetComponent<SpriteRenderer>();
 			}
-		}		
+		}	
+
+		noteTilesDown = new SpriteRenderer[NoteManagerDown.instance.xSize, NoteManagerDown.instance.ySize];
+		for (int y = 0; y < NoteManagerDown.instance.ySize; y++) {
+			for (int x = 0; x < NoteManagerDown.instance.xSize; x++) {
+				noteTilesDown[x,y] = NoteManagerDown.instance.tiles[x, y].GetComponent<SpriteRenderer>();
+			}
+		}			
 		
 		StartCoroutine(TriggerWave());
 
-		SynthSource_0 = GameObject.Find("C4");
-		SynthSource_1 = GameObject.Find("C#4");
-		SynthSource_2 = GameObject.Find("D4");
-		SynthSource_3 = GameObject.Find("D#4");
-		SynthSource_4 = GameObject.Find("E4");	
-		SynthSource_5 = GameObject.Find("F4");
-		SynthSource_6 = GameObject.Find("F#4");
-		SynthSource_7 = GameObject.Find("G4");
-		SynthSource_8 = GameObject.Find("G#4");
-		SynthSource_9 = GameObject.Find("A4");
-		SynthSource_10 = GameObject.Find("A#4");
-		SynthSource_11 = GameObject.Find("B4");
-		SynthSource_12 = GameObject.Find("C5");
-		SynthSource_13 = GameObject.Find("C#5");
-		SynthSource_14 = GameObject.Find("D5");
-		SynthSource_15 = GameObject.Find("D#5");
+		SynthSource_0 = GameObject.Find("SynthSource_0");
+		SynthSource_1 = GameObject.Find("SynthSource_1");
+		SynthSource_2 = GameObject.Find("SynthSource_2");
+		SynthSource_3 = GameObject.Find("SynthSource_3");
+		SynthSource_4 = GameObject.Find("SynthSource_4");	
+		SynthSource_5 = GameObject.Find("SynthSource_5");
+		SynthSource_6 = GameObject.Find("SynthSource_6");
+		SynthSource_7 = GameObject.Find("SynthSource_7");
+		SynthSource_8 = GameObject.Find("SynthSource_8");
+		SynthSource_9 = GameObject.Find("SynthSource_9");
+		SynthSource_10 = GameObject.Find("SynthSource_10");
+		SynthSource_11 = GameObject.Find("SynthSource_11");
+		SynthSource_12 = GameObject.Find("SynthSource_12");
+		SynthSource_13 = GameObject.Find("SynthSource_13");
+		SynthSource_14 = GameObject.Find("SynthSource_14");
+		SynthSource_15 = GameObject.Find("SynthSource_15");
+
+		SynthSource_16 = GameObject.Find("SynthSource_16");
+		SynthSource_17 = GameObject.Find("SynthSource_17");
+		SynthSource_18 = GameObject.Find("SynthSource_18");
+		SynthSource_19 = GameObject.Find("SynthSource_19");
+		SynthSource_20 = GameObject.Find("SynthSource_20");	
+		SynthSource_21 = GameObject.Find("SynthSource_21");
+		SynthSource_22 = GameObject.Find("SynthSource_22");
+		SynthSource_23 = GameObject.Find("SynthSource_23");
+		SynthSource_24 = GameObject.Find("SynthSource_24");
+		SynthSource_25 = GameObject.Find("SynthSource_25");
+		SynthSource_26 = GameObject.Find("SynthSource_26");
+		SynthSource_27 = GameObject.Find("SynthSource_27");
+		SynthSource_28 = GameObject.Find("SynthSource_28");
+		SynthSource_29 = GameObject.Find("SynthSource_29");
+		SynthSource_30 = GameObject.Find("SynthSource_30");
+		SynthSource_31 = GameObject.Find("SynthSource_31");
+
+		SynthSource_32 = GameObject.Find("SynthSource_32");
+		SynthSource_33 = GameObject.Find("SynthSource_33");
+		SynthSource_34 = GameObject.Find("SynthSource_34");
+		SynthSource_35 = GameObject.Find("SynthSource_35");
+		SynthSource_36 = GameObject.Find("SynthSource_36");	
+		SynthSource_37 = GameObject.Find("SynthSource_37");
+		SynthSource_38 = GameObject.Find("SynthSource_38");
+		SynthSource_39 = GameObject.Find("SynthSource_39");
+		SynthSource_40 = GameObject.Find("SynthSource_40");
+		SynthSource_41 = GameObject.Find("SynthSource_41");
+		SynthSource_42 = GameObject.Find("SynthSource_42");
+		SynthSource_43 = GameObject.Find("SynthSource_43");
+		SynthSource_44 = GameObject.Find("SynthSource_44");
+		SynthSource_45 = GameObject.Find("SynthSource_45");
+		SynthSource_46 = GameObject.Find("SynthSource_46");
+		SynthSource_47 = GameObject.Find("SynthSource_47");				
 
 		SynthSourcePad = GameObject.Find("SynthPads");	
 			
@@ -538,7 +649,231 @@ public class OperatorTile : MonoBehaviour {
 			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
 			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[15];
 			StartCoroutine(StopNote());
-		}										
+		}
+
+		if (render.sprite.name == "note 16") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[16];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 17") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[17];
+			StartCoroutine(StopNote());
+		}		
+
+		if (render.sprite.name == "note 18") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[18];
+			StartCoroutine(StopNote());
+		}		
+
+		if (render.sprite.name == "note 19") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[19];
+			StartCoroutine(StopNote());
+		}		
+
+		if (render.sprite.name == "note 20") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[20];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 21") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[21];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 22") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[22];
+			StartCoroutine(StopNote());
+		}		
+
+		if (render.sprite.name == "note 23") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[23];
+			StartCoroutine(StopNote());
+		}		
+
+		if (render.sprite.name == "note 24") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[24];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 25") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[25];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 26") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[26];
+			StartCoroutine(StopNote());
+		}			
+
+		if (render.sprite.name == "note 27") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[27];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 28") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[28];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 29") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[29];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 30") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[30];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 31") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[31];
+			StartCoroutine(StopNote());
+		}		
+
+		if (render.sprite.name == "note 32") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[32];
+			StartCoroutine(StopNote());
+		}																															
+
+		if (render.sprite.name == "note 33") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[33];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 34") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[34];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 35") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[35];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 36") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[36];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 37") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[37];
+			StartCoroutine(StopNote());
+		}
+
+		if (render.sprite.name == "note 38") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[38];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 39") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[39];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 40") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[40];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 41") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[41];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 42") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[42];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 43") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[43];
+			StartCoroutine(StopNote());
+		}		
+
+		if (render.sprite.name == "note 44") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[44];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 45") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[45];
+			StartCoroutine(StopNote());
+		}
+
+		if (render.sprite.name == "note 46") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[46];
+			StartCoroutine(StopNote());
+		}	
+
+		if (render.sprite.name == "note 47") {
+			render.color = selectedColor;	
+			SynthSourcePad.GetComponent<Oscillator>().gain = synthVolume;
+			SynthSourcePad.GetComponent<Oscillator>().frequency = SynthSourcePad.GetComponent<Oscillator>().frequencies[47];
+			StartCoroutine(StopNote());
+		}																									
 
 		mainCamera.GetComponent<CameraShake>().shakecamera();
 		StartCoroutine(StopShakingCamera());
@@ -959,7 +1294,183 @@ public class OperatorTile : MonoBehaviour {
 				StartCoroutine(resetflipTile());
 				Instantiate(whiteParticles, transform.position, Quaternion.identity);
 			}
-		}																						
+		}		
+
+		//
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 16") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[0][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 17") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[1][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 18") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[2][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 19") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[3][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 20") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[4][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 21") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[5][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 21") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[5][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 22") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[6][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}		
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 23") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[7][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 24") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[8][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 25") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[9][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 26") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[10][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}																																					
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 27") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[11][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 28") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[12][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 29") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[13][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}	
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 30") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[14][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}		
+
+		if (render.tag == "blocks" && render.color == Color.white && render.sprite.name == "note 31") {
+			if (FindIndicesOfObject(this.gameObject, out jFound, out kFound)) {
+				OperatorManager.instance.noteDown[15][jFound, kFound] = false;
+				render.sprite = block;
+				GetComponent<RotateYaxis>().flipTile();
+				StartCoroutine(resetflipTile());
+				Instantiate(whiteParticles, transform.position, Quaternion.identity);
+			}
+		}						
+
+		//
+
+
 
 		if (render.sprite == null) {
 		 	return;
@@ -1174,7 +1685,126 @@ public class OperatorTile : MonoBehaviour {
 				}
 				else if (OperatorManager.instance.note[15][x, y] == false && render.sprite.name == "note 15") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
-				}																																											
+				}	
+
+				//
+
+				if (OperatorManager.instance.noteDown[0][x, y] == true && render.sprite.name == "note 16") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_16;
+				}
+				else if (OperatorManager.instance.noteDown[0][x, y] == false && render.sprite.name == "note 16") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.noteDown[1][x, y] == true && render.sprite.name == "note 17") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_17;
+				}
+				else if (OperatorManager.instance.noteDown[1][x, y] == false && render.sprite.name == "note 17") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.noteDown[2][x, y] == true && render.sprite.name == "note 18") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_18;
+				}
+				else if (OperatorManager.instance.noteDown[2][x, y] == false && render.sprite.name == "note 18") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.noteDown[3][x, y] == true && render.sprite.name == "note 19") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_19;
+				}
+				else if (OperatorManager.instance.noteDown[3][x, y] == false && render.sprite.name == "note 19") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.noteDown[4][x, y] == true && render.sprite.name == "note 20") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_20;
+				}
+				else if (OperatorManager.instance.noteDown[4][x, y] == false && render.sprite.name == "note 20") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.noteDown[5][x, y] == true && render.sprite.name == "note 21") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_21;
+				}
+				else if (OperatorManager.instance.noteDown[5][x, y] == false && render.sprite.name == "note 21") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}				
+
+				if (OperatorManager.instance.noteDown[6][x, y] == true && render.sprite.name == "note 22") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_22;
+				}
+				else if (OperatorManager.instance.noteDown[6][x, y] == false && render.sprite.name == "note 22") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}
+
+				if (OperatorManager.instance.noteDown[7][x, y] == true && render.sprite.name == "note 23") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_23;
+				}
+				else if (OperatorManager.instance.noteDown[7][x, y] == false && render.sprite.name == "note 23") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.noteDown[8][x, y] == true && render.sprite.name == "note 24") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_24;
+				}
+				else if (OperatorManager.instance.noteDown[8][x, y] == false && render.sprite.name == "note 24") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}
+
+				if (OperatorManager.instance.noteDown[9][x, y] == true && render.sprite.name == "note 25") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_25;
+				}
+				else if (OperatorManager.instance.noteDown[9][x, y] == false && render.sprite.name == "note 25") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}
+
+				if (OperatorManager.instance.noteDown[10][x, y] == true && render.sprite.name == "note 26") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_26;
+				}
+				else if (OperatorManager.instance.noteDown[10][x, y] == false && render.sprite.name == "note 26") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.noteDown[11][x, y] == true && render.sprite.name == "note 27") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_27;
+				}
+				else if (OperatorManager.instance.noteDown[11][x, y] == false && render.sprite.name == "note 27") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.noteDown[12][x, y] == true && render.sprite.name == "note 28") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_28;
+				}
+				else if (OperatorManager.instance.noteDown[12][x, y] == false && render.sprite.name == "note 28") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.noteDown[13][x, y] == true && render.sprite.name == "note 29") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_29;
+				}
+				else if (OperatorManager.instance.noteDown[13][x, y] == false && render.sprite.name == "note 29") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}		
+
+				if (OperatorManager.instance.noteDown[14][x, y] == true && render.sprite.name == "note 30") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_30;
+				}
+				else if (OperatorManager.instance.noteDown[14][x, y] == false && render.sprite.name == "note 30") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}	
+
+				if (OperatorManager.instance.noteDown[15][x, y] == true && render.sprite.name == "note 31") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_31;
+				}
+				else if (OperatorManager.instance.noteDown[15][x, y] == false && render.sprite.name == "note 31") {
+					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
+				}																						
+
+				//
+
+
+
 
 				////
 
@@ -1683,7 +2313,174 @@ public class OperatorTile : MonoBehaviour {
 				previousSelected.GetComponent<OperatorTile>().Deselect();
 				Select();
 			}
+		}	
+
+		//
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 16") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[0][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 16";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}	
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 17") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[1][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 17";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 18") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[2][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 18";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}	
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 19") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[3][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 19";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}	
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 20") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[4][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 20";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}				
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 21") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[5][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 21";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}	
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 22") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[6][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 22";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 23") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[7][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 23";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}	
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 24") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[8][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 24";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}	
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 25") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[9][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 25";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}	
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 26") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[10][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 26";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}	
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 27") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[11][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 27";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}	
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 28") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[12][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 28";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 29") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[13][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 29";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}	
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 30") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[14][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 30";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
+		}	
+
+		if (render.sprite.name == "block 0" && render2.sprite.name == "note 31") {
+			if (FindIndicesOfObject(clickedPad, out jFound, out kFound)) {
+				OperatorManager.instance.tiles[jFound,kFound].GetComponent<SpriteRenderer>().sprite = render2.sprite;
+				OperatorManager.instance.noteDown[15][jFound,kFound] = true;
+				OperatorManager.instance.notePadsDown[0][jFound,kFound] = "note 31";
+				previousSelected.GetComponent<OperatorTile>().Deselect();
+				Select();
+			}
 		}		
+
+		//
+
+
+
 	}
 
 	public IEnumerator TriggerWave() {
